@@ -128,7 +128,8 @@ namespace Proyecto_BD_HA_V2
             username = usernameMetroTextBox.Text = string.Empty;
             email = emailMetroTextBox.Text = string.Empty;
             emailConfirm = emailConfirmMetroTextBox.Text = string.Empty;
-            password = passwordConfirmMetroTextBox.Text = string.Empty;
+            password = passwordMetroTextBox.Text = string.Empty;
+            passwordConfirm = passwordConfirmMetroTextBox.Text = string.Empty;
             role = roleMetroComboBox.Text = string.Empty;
 
         }

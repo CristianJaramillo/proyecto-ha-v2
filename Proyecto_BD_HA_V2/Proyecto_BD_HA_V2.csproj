@@ -266,6 +266,7 @@
     <Compile Include="Pantalla_Enviar.Designer.cs">
       <DependentUpon>Pantalla_Enviar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Security\Cryptography.cs" />
     <Compile Include="SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using System.Data; // Para el manejo consultado SQL
+using Proyecto_BD_HA_V2.Security;
 
 namespace Proyecto_BD_HA_V2
 {
@@ -13,8 +14,8 @@ namespace Proyecto_BD_HA_V2
         {
             int retorno = 0;
 
-            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO `responsable`(`idResponsable`, `Nombre`, `Alias`, `Password`, `Puesto`, `FechaIngreso`, `HoraIngreso`, `CORREO`) VALUES ('{0}','{1}','{2}',MD5('{3}'),'{4}',CURRENT_DATE(), CURRENT_TIME(),'{5}')",
-                pResponsable.idResponsable, pResponsable.Nombre, pResponsable.Alias, pResponsable.Password, pResponsable.Puesto, pResponsable.Correo), BDConexion.ObtenerConexion());
+            MySqlCommand comando = new MySqlCommand(string.Format("INSERT INTO `responsable`(`idResponsable`, `Nombre`, `Alias`, `Password`, `Puesto`, `FechaIngreso`, `HoraIngreso`, `CORREO`) VALUES ('{0}','{1}','{2}','{3}','{4}',CURRENT_DATE(), CURRENT_TIME(),'{5}')",
+                pResponsable.idResponsable, pResponsable.Nombre, pResponsable.Alias, Cryptography.Encrypt(pResponsable.Password), pResponsable.Puesto, pResponsable.Correo), BDConexion.ObtenerConexion());
             retorno = comando.ExecuteNonQuery();
 
             return retorno;
@@ -130,13 +131,20 @@ namespace Proyecto_BD_HA_V2
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pAlias"></param>
+        /// <param name="pPass"></param>
+        /// <returns></returns>
         public static DataTable Buscar(string pAlias, string pPass)
         {
             DataTable dt = new DataTable();
             MySqlConnection conexion = BDConexion.ObtenerConexion();
-            string consulta = "SELECT * FROM `responsable` WHERE `Alias` = '" + pAlias + "' AND `Password` = MD5('" + pPass + "')";
+            string consulta = "SELECT * FROM responsable WHERE Alias=?username AND Password=?password"; // + "' AND `Password` = MD5('" + pPass + "')";
             MySqlCommand comando = new MySqlCommand(String.Format(consulta), conexion);
-            comando.Parameters.AddWithValue("{0}",pAlias);
+            comando.Parameters.AddWithValue("?username", pAlias);
+            comando.Parameters.AddWithValue("?password", Cryptography.Encrypt(pPass));
             MySqlDataAdapter adap = new MySqlDataAdapter(comando);
             adap.Fill(dt);
             return dt;
