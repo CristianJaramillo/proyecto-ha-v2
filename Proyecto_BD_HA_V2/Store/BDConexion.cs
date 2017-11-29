@@ -19,5 +19,8 @@ namespace Proyecto_BD_HA_V2
                 conectar.Open();
                 return conectar;
             }
+
+            
+
     }
 }

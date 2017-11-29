@@ -141,7 +141,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 40);
             this.button4.TabIndex = 99;
-            this.button4.Text = "Ver BD Productos";
+            this.button4.Text = "Ver BD Producto";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -198,7 +198,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(40, 143);
+            this.label5.Location = new System.Drawing.Point(23, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 16);
             this.label5.TabIndex = 106;
@@ -207,7 +207,7 @@
             // 
             // textFactura
             // 
-            this.textFactura.Location = new System.Drawing.Point(150, 143);
+            this.textFactura.Location = new System.Drawing.Point(106, 59);
             this.textFactura.Name = "textFactura";
             this.textFactura.Size = new System.Drawing.Size(101, 20);
             this.textFactura.TabIndex = 107;

@@ -14,6 +14,7 @@ using System.Drawing;
 using System.Web;
 using System.Diagnostics; //prueba 
 using System.IO; // Para directory y FileStream
+using Proyecto_BD_HA_V2.Model;
 
 namespace Proyecto_BD_HA_V2
 {
@@ -86,18 +87,18 @@ namespace Proyecto_BD_HA_V2
             return dt;
         }
         
-        public static List<Productos> Buscar(string pidProductos)
+        public static List<Producto> Buscar(string pidProductos)
         {
-            List<Productos> _lista = new List<Productos>();
+            List<Producto> _lista = new List<Producto>();
 
             MySqlCommand _comando = new MySqlCommand(String.Format(
            "SELECT `idProducto`, `Responsable_idResponsable`, `Nombre`, `Talla`, `Precio`, `Stock`, `FechaIngreso`, `HoraIngreso` FROM `productos` WHERE `productos`.`idProducto` = {0}", pidProductos), BDConexion.ObtenerConexion());
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                Productos pProductos = new Productos();
+                Producto pProductos = new Producto();
                 pProductos.idProductos = _reader.GetInt32(0);
-                pProductos.Responsable_idResponsable = _reader.GetString(1);
+                pProductos.idResponsable = _reader.GetString(1);
                 pProductos.Nombre = _reader.GetString(2);
                 pProductos.Talla = _reader.GetString(3);
                 pProductos.Precio = _reader.GetString(4);
@@ -108,9 +109,9 @@ namespace Proyecto_BD_HA_V2
             return _lista;
         }
 
-        public static Productos ObtenerProductos(int pidProductos)
+        public static Producto ObtenerProductos(int pidProductos)
         {
-            Productos pProductos = new Productos();
+            Producto pProductos = new Producto();
             MySqlConnection conexion = BDConexion.ObtenerConexion();
             //SELECT `idProducto`, `Nombre`, `Talla`, `Precio`, `Stock`, `Responsable_idResponsable` FROM `productos` WHERE `productos`.`idProducto` = 1
 
@@ -119,7 +120,7 @@ namespace Proyecto_BD_HA_V2
             while (_reader.Read())
             {
                 pProductos.idProductos = _reader.GetInt32(0);
-                pProductos.Responsable_idResponsable = _reader.GetString(1);
+                pProductos.idResponsable = _reader.GetString(1);
                 pProductos.Nombre = _reader.GetString(2);
                 pProductos.Talla = _reader.GetString(3);
                 pProductos.Precio = _reader.GetString(4);
@@ -129,11 +130,11 @@ namespace Proyecto_BD_HA_V2
             conexion.Close();
             return pProductos;
         }
-        public static int Actualizar(Productos pProductos)
+        public static int Actualizar(Producto pProductos)
         {
             int retorno = 0;
             MySqlConnection conexion = BDConexion.ObtenerConexion();
-            MessageBox.Show(Convert.ToString(pProductos.Responsable_idResponsable));
+            MessageBox.Show(Convert.ToString(pProductos.idResponsable));
             MessageBox.Show(Convert.ToString(pProductos.Nombre));
             MessageBox.Show(Convert.ToString(pProductos.Talla));
             MessageBox.Show(Convert.ToString(pProductos.Precio));
@@ -141,7 +142,7 @@ namespace Proyecto_BD_HA_V2
             MessageBox.Show(Convert.ToString(pProductos.idProductos));
             //UPDATE `productos` SET `Responsable_idResponsable` = '8', `Nombre` = 'cobija', `Talla` = 'Chico', `Precio` = '54', `Stock` = '65' WHERE `productos`.`idProducto` = 4 
             MySqlCommand comando = new MySqlCommand(string.Format("UPDATE `productos` SET `Responsable_idResponsable` = '{0}', `Nombre` = '{1}', `Talla` = '{2}', `Precio` = '{3}', `Stock` = '{4}' WHERE `productos`.`idProducto` = '{5}'",
-                pProductos.Responsable_idResponsable, pProductos.Nombre, pProductos.Talla, pProductos.Precio, pProductos.Stock, pProductos.idProductos), conexion);
+                pProductos.idResponsable, pProductos.Nombre, pProductos.Talla, pProductos.Precio, pProductos.Stock, pProductos.idProductos), conexion);
 
             retorno = comando.ExecuteNonQuery();
             conexion.Close();

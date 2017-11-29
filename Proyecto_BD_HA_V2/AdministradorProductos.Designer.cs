@@ -124,7 +124,7 @@
             this.MaximizeBox = false;
             this.Name = "AdministradorProductos";
             this.Resizable = false;
-            this.Text = "Administrador de Productos";
+            this.Text = "Administrador de Producto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdministradorProductos_FormClosing);
             this.Load += new System.EventHandler(this.AdministradorProductos_Load);
             this.ResumeLayout(false);

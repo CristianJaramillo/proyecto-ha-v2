@@ -93,7 +93,7 @@ namespace Proyecto_BD_HA_V2
         /// <param name="e"></param>
         private void SalesButton_Click(object sender, EventArgs e)
         {
-            children = new Ventas(this, userId);
+            children = new SalesForm(this, userId);
             children.Show();
             Hide();
         }

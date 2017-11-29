@@ -173,7 +173,7 @@
     <Compile Include="BDCliente.Designer.cs">
       <DependentUpon>BDCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="BDConexion.cs" />
+    <Compile Include="Store\BDConexion.cs" />
     <Compile Include="BDResponsable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +266,12 @@
     <Compile Include="Pantalla_Enviar.Designer.cs">
       <DependentUpon>Pantalla_Enviar.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesForm.Designer.cs">
+      <DependentUpon>SalesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Security\Cryptography.cs" />
     <Compile Include="SignInForm.cs">
       <SubType>Form</SubType>
@@ -349,7 +355,7 @@
     <Compile Include="Numerico.cs" />
     <Compile Include="BaseRegistro.cs" />
     <Compile Include="MaestroProducto.cs" />
-    <Compile Include="Productos.cs" />
+    <Compile Include="Model\Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reporte.cs">
@@ -360,6 +366,7 @@
     </Compile>
     <Compile Include="Model\Responsable.cs" />
     <Compile Include="SiCorreo.cs" />
+    <Compile Include="Store\Connection.cs" />
     <Compile Include="TablaCliente.cs" />
     <Compile Include="TablaDetalle.cs" />
     <Compile Include="TablaFactura.cs" />
@@ -453,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla_Enviar.resx">
       <DependentUpon>Pantalla_Enviar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesForm.resx">
+      <DependentUpon>SalesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>

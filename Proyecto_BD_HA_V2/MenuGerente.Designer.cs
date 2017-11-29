@@ -160,7 +160,7 @@
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(71, 19);
             this.metroLabel3.TabIndex = 216;
-            this.metroLabel3.Text = "Productos";
+            this.metroLabel3.Text = "Producto";
             // 
             // metroLabel4
             // 

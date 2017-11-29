@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data; // Nuevo
 using MySql.Data.MySqlClient;
+using Proyecto_BD_HA_V2.Model;
 
 namespace Proyecto_BD_HA_V2
 {
@@ -24,16 +25,16 @@ namespace Proyecto_BD_HA_V2
             return retorno;
         }
 
-        public static List<Productos> Buscar(string pIdRemision)
+        public static List<Producto> Buscar(string pIdRemision)
         {
-            List<Productos> _lista = new List<Productos>();
+            List<Producto> _lista = new List<Producto>();
 
             MySqlCommand _comando = new MySqlCommand(String.Format(
            "SELECT IdRegistro, IdProducto, Piezas, CostoUnit, Nombre, Talla, (Piezas*CostoUnit) AS Importe FROM registro where IdRegistro ='{0}'", pIdRemision), BDConexion.ObtenerConexion());
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                Productos pProducto = new Productos();
+                Producto pProducto = new Producto();
                 pProducto.idProductos = _reader.GetInt32(0);
                 pProducto.Nombre = _reader.GetString(1);
                 pProducto.FechaIngreso = _reader.GetString(2);

@@ -1,4 +1,5 @@
 ﻿using MetroFramework.Forms;
+using Proyecto_BD_HA_V2.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,8 @@ namespace Proyecto_BD_HA_V2
 {
     public partial class Cambio_datos : MetroForm
     {
-        public Productos ProductoActual { get; set; }
+        public Producto ProductoActual { get; set; }
+
         public Cambio_datos()
         {
             InitializeComponent();
@@ -76,8 +78,8 @@ namespace Proyecto_BD_HA_V2
                 {
                     msj_cambio_realizado msjok = new msj_cambio_realizado();
                     msj_cambio_error msjerror = new msj_cambio_error();
-                    Productos pProducto = new Productos();
-                    pProducto.Responsable_idResponsable = num;
+                    Producto pProducto = new Producto();
+                    pProducto.idResponsable = num;
                     pProducto.Nombre = textNombre.Text.Trim();
                     pProducto.Talla = comboTalla.Text.Trim();
                     pProducto.Precio = textPrecio.Text.Trim();

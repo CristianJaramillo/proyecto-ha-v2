@@ -1,4 +1,5 @@
 ﻿using MetroFramework.Forms;
+using Proyecto_BD_HA_V2.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,7 +73,7 @@ namespace Proyecto_BD_HA_V2
             this.Close();
         }
 
-        public Productos ProductoSelect { get; set; }
+        public Producto ProductoSelect { get; set; }
 
         private void button3_Click(object sender, EventArgs e)
         {

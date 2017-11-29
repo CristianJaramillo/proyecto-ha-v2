@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_BD_HA_V2.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,6 @@ namespace Proyecto_BD_HA_V2
 
         public Factura Factura { get; set; }
 
-        public Productos Productos { get; set; }
+        public Producto Productos { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MetroFramework.Forms;
+using Proyecto_BD_HA_V2.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,7 +43,7 @@ namespace Proyecto_BD_HA_V2
         {
             msj_alta_completo msjalta = new msj_alta_completo();
             msj_alta_error msjerror = new msj_alta_error();
-            Productos pProducto = new Productos();
+            Producto pProducto = new Producto();
             bool[] numerico = new bool[] {true,true}; // Para verificar si es numerico
             numerico[0] = Numerico.EsNumericoFloat(textoPrecio.Text.Trim());
             numerico[1] = Numerico.EsNumerico(textoStock.Text.Trim());
@@ -51,7 +52,7 @@ namespace Proyecto_BD_HA_V2
             {
                 if(numerico[0] == true && numerico[1] == true)
                 {
-                    pProducto.Responsable_idResponsable = num;
+                    pProducto.idResponsable = num;
                     pProducto.Nombre = textoNombre.Text.Trim();
                     pProducto.Talla = comboTalla.Text.Trim();
                     pProducto.Precio = textoPrecio.Text.Trim();
