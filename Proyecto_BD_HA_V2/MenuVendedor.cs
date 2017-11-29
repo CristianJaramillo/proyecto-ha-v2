@@ -14,16 +14,20 @@ namespace Proyecto_BD_HA_V2
     public partial class MenuVendedor : MetroForm
     {
 
+#region
         private Form parent;
+        private string userId;
+#endregion
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="parent"></param>
-        public MenuVendedor(Form parent)
+        public MenuVendedor(Form parent, string userId)
         {
             InitializeComponent();
             this.parent = parent;
+            this.userId = userId;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -39,22 +43,16 @@ namespace Proyecto_BD_HA_V2
             else
                 MessageBox.Show("Se cancelo la solicitud", "Solicitud Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-        public string num;
 
-        public void Recibir(string usuario_id)
-        {
-            num = usuario_id;
-        }
         private void button2_Click(object sender, EventArgs e)
         {
-            Ventas ve = new Ventas();
-            ve.Recibir(num);
+            Ventas ve = new Ventas(this, userId);
             ve.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ConsultaVentas ve = new ConsultaVentas();
+            ConsultaVentas ve = new ConsultaVentas(this);
             ve.Show();
         }
     }

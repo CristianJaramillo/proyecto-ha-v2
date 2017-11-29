@@ -75,23 +75,21 @@ namespace Proyecto_BD_HA_V2
                 {
                     case "Gerente":
                         Hide();
-                        children = new MenuGerente(this);
+                        children = new MenuGerente(this, userId);
                         TablaUsuario.Actualhora(username, password);
-                        ((MenuGerente)children).Recibir(userId);
                         children.Show();
                         break;
                     case "Almacenista":
                         Hide();
-                        children = new MenuAlmacenista(this);
+                        children = new MenuAlmacenista(this, userId);
                         TablaUsuario.Actualhora(username, password);
                         ((MenuAlmacenista)children).Recibir(userId);
                         children.Show();
                         break;
                     case "Vendedor":
                         Hide();
-                        children = new MenuVendedor(this);
+                        children = new MenuVendedor(this, userId);
                         TablaUsuario.Actualhora(username, password);
-                        ((MenuVendedor)children).Recibir(userId);
                         children.Show();
                         break;
                     default:

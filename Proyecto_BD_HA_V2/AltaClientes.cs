@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using MetroFramework.Forms;
 
 namespace Proyecto_BD_HA_V2
 {
-    public partial class AltaClientes : Form
+    public partial class AltaClientes : MetroForm
     {
         public AltaClientes()
         {
@@ -111,6 +112,11 @@ namespace Proyecto_BD_HA_V2
             {
                 error.Clear();
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

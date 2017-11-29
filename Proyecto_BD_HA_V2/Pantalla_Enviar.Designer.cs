@@ -49,7 +49,7 @@
             // 
             // Button1
             // 
-            this.Button1.Location = new System.Drawing.Point(480, 112);
+            this.Button1.Location = new System.Drawing.Point(537, 197);
             this.Button1.Name = "Button1";
             this.Button1.Size = new System.Drawing.Size(43, 23);
             this.Button1.TabIndex = 25;
@@ -59,7 +59,7 @@
             // 
             // txtRutaArchivo
             // 
-            this.txtRutaArchivo.Location = new System.Drawing.Point(90, 114);
+            this.txtRutaArchivo.Location = new System.Drawing.Point(147, 199);
             this.txtRutaArchivo.Name = "txtRutaArchivo";
             this.txtRutaArchivo.Size = new System.Drawing.Size(384, 20);
             this.txtRutaArchivo.TabIndex = 24;
@@ -70,7 +70,7 @@
             this.Label5.BackColor = System.Drawing.Color.Transparent;
             this.Label5.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.Label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Label5.Location = new System.Drawing.Point(7, 118);
+            this.Label5.Location = new System.Drawing.Point(64, 203);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(77, 18);
             this.Label5.TabIndex = 23;
@@ -78,7 +78,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(397, 39);
+            this.txtPassword.Location = new System.Drawing.Point(454, 124);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(126, 20);
@@ -90,7 +90,7 @@
             this.Label4.BackColor = System.Drawing.Color.Transparent;
             this.Label4.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.Label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Label4.Location = new System.Drawing.Point(289, 38);
+            this.Label4.Location = new System.Drawing.Point(346, 123);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(98, 18);
             this.Label4.TabIndex = 21;
@@ -104,7 +104,7 @@
             this.BtnEnviar.FlatAppearance.BorderSize = 0;
             this.BtnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEnviar.Location = new System.Drawing.Point(245, 284);
+            this.BtnEnviar.Location = new System.Drawing.Point(302, 369);
             this.BtnEnviar.Name = "BtnEnviar";
             this.BtnEnviar.Size = new System.Drawing.Size(98, 37);
             this.BtnEnviar.TabIndex = 20;
@@ -113,7 +113,7 @@
             // 
             // rtbMensaje
             // 
-            this.rtbMensaje.Location = new System.Drawing.Point(58, 155);
+            this.rtbMensaje.Location = new System.Drawing.Point(115, 240);
             this.rtbMensaje.Name = "rtbMensaje";
             this.rtbMensaje.Size = new System.Drawing.Size(464, 118);
             this.rtbMensaje.TabIndex = 19;
@@ -123,7 +123,7 @@
             // 
             // txtAsunto
             // 
-            this.txtAsunto.Location = new System.Drawing.Point(90, 88);
+            this.txtAsunto.Location = new System.Drawing.Point(147, 173);
             this.txtAsunto.Name = "txtAsunto";
             this.txtAsunto.Size = new System.Drawing.Size(183, 20);
             this.txtAsunto.TabIndex = 18;
@@ -135,7 +135,7 @@
             this.Label3.BackColor = System.Drawing.Color.Transparent;
             this.Label3.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Label3.Location = new System.Drawing.Point(20, 88);
+            this.Label3.Location = new System.Drawing.Point(77, 173);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(64, 18);
             this.Label3.TabIndex = 15;
@@ -147,7 +147,7 @@
             this.Label2.BackColor = System.Drawing.Color.Transparent;
             this.Label2.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Label2.Location = new System.Drawing.Point(36, 64);
+            this.Label2.Location = new System.Drawing.Point(93, 149);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(48, 18);
             this.Label2.TabIndex = 14;
@@ -159,7 +159,7 @@
             this.Label1.BackColor = System.Drawing.Color.Transparent;
             this.Label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Label1.Location = new System.Drawing.Point(51, 38);
+            this.Label1.Location = new System.Drawing.Point(108, 123);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(33, 18);
             this.Label1.TabIndex = 13;
@@ -173,7 +173,7 @@
             // 
             this.cmbCorreo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCorreo.FormattingEnabled = true;
-            this.cmbCorreo.Location = new System.Drawing.Point(90, 35);
+            this.cmbCorreo.Location = new System.Drawing.Point(147, 120);
             this.cmbCorreo.Name = "cmbCorreo";
             this.cmbCorreo.Size = new System.Drawing.Size(183, 21);
             this.cmbCorreo.TabIndex = 26;
@@ -182,7 +182,7 @@
             // 
             this.cmbCorreoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCorreoCliente.FormattingEnabled = true;
-            this.cmbCorreoCliente.Location = new System.Drawing.Point(90, 62);
+            this.cmbCorreoCliente.Location = new System.Drawing.Point(147, 147);
             this.cmbCorreoCliente.Name = "cmbCorreoCliente";
             this.cmbCorreoCliente.Size = new System.Drawing.Size(183, 21);
             this.cmbCorreoCliente.TabIndex = 27;
@@ -193,7 +193,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(289, 65);
+            this.label6.Location = new System.Drawing.Point(346, 150);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 18);
             this.label6.TabIndex = 28;
@@ -207,7 +207,7 @@
             "Hotmail",
             "Gmail",
             "Yahoo"});
-            this.cmbServidor.Location = new System.Drawing.Point(397, 65);
+            this.cmbServidor.Location = new System.Drawing.Point(454, 150);
             this.cmbServidor.Name = "cmbServidor";
             this.cmbServidor.Size = new System.Drawing.Size(126, 21);
             this.cmbServidor.TabIndex = 29;
@@ -216,9 +216,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkBlue;
             this.BackgroundImage = global::Proyecto_BD_HA_V2.Properties.Resources.Gray_minimalist_wallpaper_1280x800;
-            this.ClientSize = new System.Drawing.Size(566, 333);
+            this.ClientSize = new System.Drawing.Size(680, 440);
             this.Controls.Add(this.cmbServidor);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbCorreoCliente);
@@ -237,6 +236,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Pantalla_Enviar";
             this.Text = "The Dark Uniforms - Enviar Correo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Pantalla_Enviar_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

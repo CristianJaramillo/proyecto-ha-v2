@@ -12,22 +12,27 @@ using System.Windows.Forms;
 using MySql.Data; // Nuevo
 using MySql.Data.MySqlClient;
 using System.IO; // Para directory y FileStream
+using MetroFramework.Forms;
 
 namespace Proyecto_BD_HA_V2
 {
-    public partial class BDCliente : Form
+    public partial class BDCliente : MetroForm
     {
-        DataTable dtDatos = new DataTable();
+        private DataTable dtDatos = new DataTable();
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BDCliente()
         {
             InitializeComponent();
         }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BDCliente_Load(object sender, EventArgs e)
         {
             MySqlConnection _conexion = BDConexion.ObtenerConexion();

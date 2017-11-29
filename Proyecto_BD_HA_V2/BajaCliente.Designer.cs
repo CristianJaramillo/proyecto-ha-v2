@@ -34,7 +34,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,10 +45,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Neuropol", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(39, 201);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(177, 20);
+            this.label6.Size = new System.Drawing.Size(150, 24);
             this.label6.TabIndex = 75;
             this.label6.Text = "Num de cliente *";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -85,18 +84,6 @@
             this.label3.TabIndex = 70;
             this.label3.Text = "Baja de Cliente por el número de cliente";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Copperplate Gothic Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(34, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(605, 53);
-            this.label2.TabIndex = 69;
-            this.label2.Text = "THE DARK UNIFORMS";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -111,7 +98,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Neuropol", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(427, 287);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 50);
@@ -122,7 +109,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Neuropol", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(80, 287);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 50);
@@ -133,10 +120,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Neuropol", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(222, 198);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(364, 26);
+            this.textBox1.Size = new System.Drawing.Size(364, 29);
             this.textBox1.TabIndex = 65;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Validated += new System.EventHandler(this.textBox1_Validated);
@@ -149,19 +136,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(652, 363);
+            this.ClientSize = new System.Drawing.Size(680, 460);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BajaCliente";
+            this.Resizable = false;
+            this.ShowIcon = false;
             this.Text = "BajaCliente";
             this.Load += new System.EventHandler(this.BajaCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
@@ -176,7 +163,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;

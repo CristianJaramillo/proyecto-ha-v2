@@ -11,14 +11,26 @@ using MySql.Data; // Nuevo
 using MySql.Data.MySqlClient;
 using System.Xml;
 using System.Xml.Serialization;
+using MetroFramework.Forms;
 
 namespace Proyecto_BD_HA_V2
 {
-    public partial class ConsultaVentas : Form
+    public partial class ConsultaVentas : MetroForm
     {
-        public ConsultaVentas()
+
+        #region
+        private Form parent;
+        private Form childre;
+        private string userId;
+        #endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ConsultaVentas(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,35 +62,22 @@ namespace Proyecto_BD_HA_V2
 
         DataTable dtDatos = new DataTable();
         DataSet dtSet = new DataSet();
-
-
-
+        
 
         private void btnXML_Click(object sender, EventArgs e)
         {
             ControlReporte re = new ControlReporte(textBox1.Text.Trim());
             re.Show();
+        }
 
-
-            /*
-            MySqlConnection _conexion = BDConexion.ObtenerConexion();
-            MySqlDataAdapter mdaDatos = new MySqlDataAdapter(string.Format("SELECT factura.idFactura, responsable.Nombre AS Responsable, productos.Nombre, productos.Talla, productos.Precio, cliente.Nombre AS Comprador, CONCAT('$ ',FORMAT(detalle.Cantidad*productos.Precio,2)) AS Importe FROM `factura` INNER JOIN detalle INNER JOIN cliente INNER JOIN responsable INNER JOIN productos ON cliente.idCliente = factura.Cliente_idCliente AND responsable.idResponsable = factura.Responsable_idResponsable AND productos.idProducto = detalle.Productos_idProducto AND detalle.Factura_idFactura = factura.idFactura WHERE factura.idFactura = " + textBox1.Text.Trim()+""), _conexion); // Aqui use un codigo de que previamene cree una vista
-            mdaDatos.Fill(dtDatos);
-            SaveFileDialog save = new SaveFileDialog();
-            save.Filter = "XML|*.xml";
-            if (save.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    dtSet.Tables.Add(dtDatos); // Agregamos los datos de la tabla
-                    dtSet.WriteXml(save.FileName);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                }
-            }
-            _conexion.Close(); */
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ConsultaVentas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parent.Show();
         }
     }
 }

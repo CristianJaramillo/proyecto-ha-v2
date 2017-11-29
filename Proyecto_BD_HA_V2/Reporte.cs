@@ -14,10 +14,11 @@ using MySql.Data; // Nuevo
 using MySql.Data.MySqlClient;
 using System.Diagnostics; //prueba 
 using System.IO; // Para directory y FileStream
+using MetroFramework.Forms;
 
 namespace Proyecto_BD_HA_V2
 {
-    public partial class Reporte : Form
+    public partial class Reporte : MetroForm
     {
         DataTable dtDatos = new DataTable();
         DataSet dtSet = new DataSet();

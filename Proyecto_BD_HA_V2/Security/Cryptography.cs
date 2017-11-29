@@ -131,7 +131,7 @@ namespace Proyecto_BD_HA_V2.Security
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     return String.Empty;
                 }

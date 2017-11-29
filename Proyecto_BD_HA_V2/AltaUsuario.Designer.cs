@@ -457,6 +457,7 @@
             this.Controls.Add(this.nameMetroTextBox);
             this.Controls.Add(this.nameMetroLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AltaUsuario";
             this.Resizable = false;
             this.Text = "The Dark Uniforms - Registro de Usuarios";

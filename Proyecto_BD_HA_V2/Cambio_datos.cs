@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Proyecto_BD_HA_V2
 {
-    public partial class Cambio_datos : Form
+    public partial class Cambio_datos : MetroForm
     {
         public Productos ProductoActual { get; set; }
         public Cambio_datos()

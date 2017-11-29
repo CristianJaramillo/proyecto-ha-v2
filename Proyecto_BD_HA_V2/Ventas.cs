@@ -1,29 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data; // Nuevo
 using MySql.Data.MySqlClient;
+using MetroFramework.Forms;
 
 namespace Proyecto_BD_HA_V2
 {
-    public partial class Ventas : Form
+    public partial class Ventas : MetroForm
     {
-        public Ventas()
+
+#region
+        private Form parent;
+        private Form children;
+        private string userId;
+#endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userId"></param>
+        public Ventas(Form parent, string userId)
         {
             InitializeComponent();
-        }
-
-        public string num;
-
-        public void Recibir(string usuario_id)
-        {
-            num = usuario_id;
+            this.parent = parent;
+            this.userId = userId;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -76,6 +76,11 @@ namespace Proyecto_BD_HA_V2
             ver.Show();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -83,7 +88,7 @@ namespace Proyecto_BD_HA_V2
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            ConsultaVentas ve = new ConsultaVentas();
+            ConsultaVentas ve = new ConsultaVentas(this);
             ve.Show();
         }
 
@@ -93,7 +98,7 @@ namespace Proyecto_BD_HA_V2
 
             if (comboBoxCliente.Text.Trim() != "")
             {
-                pFactura.Responsable_idResponsable = num;
+                pFactura.Responsable_idResponsable = userId;
                 pFactura.Cliente_idCliente = comboBoxCliente.Text.Trim();
                 int resultado = TablaFactura.AgregarFactura(pFactura);
                 DataTable dt = TablaFactura.obtenerCliente(comboBoxCliente.Text.Trim());
@@ -188,6 +193,16 @@ namespace Proyecto_BD_HA_V2
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Ventas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parent.Show();
         }
     }
 }

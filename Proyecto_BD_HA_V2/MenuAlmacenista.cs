@@ -17,13 +17,17 @@ namespace Proyecto_BD_HA_V2
     public partial class MenuAlmacenista : MetroForm
     {
 
+        #region
         private Form parent;
+        private Form childre;
+        private string userId;
+        #endregion
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="parent"></param>
-        public MenuAlmacenista(Form parent)
+        public MenuAlmacenista(Form parent, string userId)
         {
             InitializeComponent();
             this.parent = parent;
@@ -48,8 +52,7 @@ namespace Proyecto_BD_HA_V2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AdministradorProductos ad = new AdministradorProductos();
-            ad.Recibir(num);
+            AdministradorProductos ad = new AdministradorProductos(this, userId);
             ad.Show();
         }
 

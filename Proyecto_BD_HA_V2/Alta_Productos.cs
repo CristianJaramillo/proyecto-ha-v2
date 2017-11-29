@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Proyecto_BD_HA_V2
 {
-    public partial class Alta_Productos : Form
+    public partial class Alta_Productos : MetroForm
     {
         
         public Alta_Productos()

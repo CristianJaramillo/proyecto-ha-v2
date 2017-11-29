@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,17 +11,26 @@ using System.Windows.Forms;
 
 namespace Proyecto_BD_HA_V2
 {
-    public partial class AdministradorProductos : Form
+    public partial class AdministradorProductos : MetroForm
     {
-        public AdministradorProductos()
+
+        #region
+        private Form parent;
+        private Form children;
+        private string userId;
+        #endregion
+
+        public AdministradorProductos(Form parent, string userId)
         {
             InitializeComponent();
+            this.parent = parent;
+            this.userId = userId;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Alta_Productos altaprod = new Alta_Productos();
-            altaprod.Recibir(num);
+            altaprod.Recibir(userId);
             altaprod.Show();
         }
 
@@ -45,15 +55,8 @@ namespace Proyecto_BD_HA_V2
         private void button3_Click(object sender, EventArgs e)
         {
             Cambio_datos cambio = new Cambio_datos();
-            cambio.Recibir(num);
+            cambio.Recibir(userId);
             cambio.Show();
-        }
-
-        public string num;
-
-        public void Recibir(string usuario_id)
-        {
-            num = usuario_id;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -69,6 +72,16 @@ namespace Proyecto_BD_HA_V2
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AdministradorProductos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parent.Show();
         }
     }
 }

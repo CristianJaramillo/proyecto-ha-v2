@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MetroFramework.Forms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,16 +12,23 @@ using System.Windows.Forms;
 
 namespace Proyecto_BD_HA_V2
 {
-    public partial class Pantalla_Enviar : Form
+    public partial class Pantalla_Enviar : MetroForm
     {
         Correo_SMTP c = new Correo_SMTP();
 
-        public Pantalla_Enviar()
+        #region
+        private Form parent;
+        private Form childre;
+        private string userId;
+        #endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Pantalla_Enviar(Form parent)
         {
             InitializeComponent();
-            //cmbCorreo.DropDownStyle = ComboBoxStyle.DropDownList;
-            //cmbCorreoCliente.DropDownStyle = ComboBoxStyle.DropDownList;
-            //cmbServidor.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.parent = parent;
         }
 
         private void BtnEnviar_Click(object sender, EventArgs e)
@@ -76,6 +84,16 @@ namespace Proyecto_BD_HA_V2
         private void rtbMensaje_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Pantalla_Enviar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parent.Show();
         }
     }
 }

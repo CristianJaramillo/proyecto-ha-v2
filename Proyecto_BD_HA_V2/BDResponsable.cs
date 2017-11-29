@@ -12,10 +12,11 @@ using System.Windows.Forms;
 using MySql.Data; // Nuevo
 using MySql.Data.MySqlClient;
 using System.IO; // Para directory y FileStream
+using MetroFramework.Forms;
 
 namespace Proyecto_BD_HA_V2
 {
-    public partial class BDResponsable : Form
+    public partial class BDResponsable : MetroForm
     {
         DataTable dtDatos = new DataTable();
         public BDResponsable()
@@ -32,15 +33,6 @@ namespace Proyecto_BD_HA_V2
             dataGridReporte.DataSource = dtDatos;
             _conexion.Close();
         }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void dataGridReporte_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 }

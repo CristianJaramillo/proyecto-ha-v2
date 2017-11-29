@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data; // Nuevo
 using MySql.Data.MySqlClient;
+using MetroFramework.Forms;
 
 namespace Proyecto_BD_HA_V2
 {
-    public partial class VerBDProductos : Form
+    public partial class VerBDProductos : MetroForm
     {
 
         DataTable dtDatos = new DataTable();
