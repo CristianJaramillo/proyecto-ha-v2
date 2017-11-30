@@ -11,10 +11,7 @@ namespace Proyecto_BD_HA_V2.Store
     {
 
         private static string config = "server=127.0.0.1; database=herramientasaut_v2; Uid=root; pwd=Tesseract454_;";
-        private static string version;
         private static MySqlConnection connection;
-        private static MySqlCommand cmd;
-        private static MySqlDataAdapter data;
 
         /// <summary>
         /// 
@@ -34,9 +31,6 @@ namespace Proyecto_BD_HA_V2.Store
                     connection.Open();
                 }
 
-                cmd = GetMysqlCommand();
-                version = Convert.ToString(cmd.ExecuteScalar());
-
                 return connection;
             }
             catch (MySqlException e)
@@ -53,27 +47,11 @@ namespace Proyecto_BD_HA_V2.Store
         /// 
         /// </summary>
         /// <param name="query"></param>
-        public static void DataAdapter(string query)
+        public static MySqlDataAdapter GetDataAdapter(string query)
         {
-            data = new MySqlDataAdapter(query, GetConnection());
+            return new MySqlDataAdapter(query, GetConnection());
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public static MySqlDataAdapter GetDataAdapter()
-        {
-            return data;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static string Version
-        {
-            get { return version; }
-        }
+        
 
         /// <summary>
         /// 
@@ -96,18 +74,9 @@ namespace Proyecto_BD_HA_V2.Store
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
-        public static MySqlCommand GetMysqlCommand(string query)
+        public static MySqlCommand GetCommand(string query)
         {
             return new MySqlCommand(query, GetConnection());
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        private static MySqlCommand GetMysqlCommand()
-        {
-            return new MySqlCommand("SELECT VERSION()", connection);
         }
 
     }

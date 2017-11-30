@@ -13,64 +13,26 @@ namespace Proyecto_BD_HA_V2
 {
     public partial class BajaUsuario : MetroForm
     {
-        public BajaUsuario()
+
+        private Form parent;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BajaUsuario(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BajaUsuario_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            bool[] numerico = new bool[] { true }; // Para verificar si es numerico
-            numerico[0] = Numerico.EsNumerico(textBox1.Text.Trim());
-
-            if (textBox1.Text.Trim() != "")
-            {
-                if (numerico[0] == true)
-                {
-                    if (MessageBox.Show("¿Esta Seguro que desea eliminar el Usuario?", "¿Estas Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        if (TablaUsuario.Eliminar(textBox1.Text) > 0)
-                        {
-                            MessageBox.Show("Usuario borrado");
-                            Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Usuario no encontrado");
-                            Hide();
-                        }
-                    }
-                    else
-                        MessageBox.Show("Se cancelo la eliminacion", "Eliminacion Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else
-                {
-                    MessageBox.Show("El campo de texto con asterisco, Deben de ser numeros enteros");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe de rellenar los campos con asterisco");
-            }
-        }
-
-        private void textBox1_Validated(object sender, EventArgs e)
-        {
-            if (!Numerico.EsNumerico(textBox1.Text))
-            {
-                error.SetError(textBox1, "debe ingresar un numero");
-                //                textBox1.Focus(); // Para restringir al usuario que ingrese un numero
-            }
-            else
-            {
-                error.Clear();
-            }
+            parent.Show();
         }
     }
 }

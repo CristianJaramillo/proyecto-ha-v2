@@ -1,4 +1,6 @@
-﻿using MetroFramework.Forms;
+﻿using MetroFramework;
+using MetroFramework.Forms;
+using Proyecto_BD_HA_V2.Store;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,48 +15,72 @@ namespace Proyecto_BD_HA_V2
 {
     public partial class ConsultaUsuario : MetroForm
     {
-        public ConsultaUsuario()
+
+        private Form parent;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parent"></param>
+        public ConsultaUsuario(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SearchMetroButton_Click(object sender, EventArgs e)
         {
-            bool[] numerico = new bool[] { true }; // Para verificar si es numerico
-            numerico[0] = Numerico.EsNumerico(textBox1.Text.Trim());
+            var userId = 0;
 
-            if (textBox1.Text.Trim() != "")
+            if (int.TryParse(SearchUserMetroTextBox.Text, out userId))
             {
-                if (numerico[0] == true)
+                var cmd = Connection.GetCommand(string.Format("SELECT * FROM responsable WHERE idResponsable={0}", userId));
+                var reader = cmd.ExecuteReader();
+
+                UsersMetroGrid.Rows.Clear();
+
+                if (reader.HasRows)
                 {
-                    dataGridViewBuscar.DataSource = TablaUsuario.Buscar(textBox1.Text);
+                    while (reader.Read())
+                    {
+                        UsersMetroGrid.Rows.Add(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2),
+                                reader.GetString(7),
+                                reader.GetString(4),
+                                reader.GetString(5),
+                                reader.GetString(6)
+                        );
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("El campo de texto con asterisco, Deben de ser numeros enteros");
+                    MetroMessageBox.Show(this, string.Format("El ID \"{0}\" no existe!", userId), Text + " Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
+                reader.Close();
+                Connection.Close();
             }
             else
             {
-                MessageBox.Show("Debe de rellenar los campos con asterisco");
+                SearchUserMetroTextBox.Clear();
+                MetroMessageBox.Show(this, "El ID no es valido!", Text + " Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void textBox1_Validated(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ConsultaUsuario_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!Numerico.EsNumerico(textBox1.Text))
-            {
-                error.SetError(textBox1, "debe ingresar un numero");
-            }
-            else
-            {
-                error.Clear();
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
+            parent.Show();
         }
     }
 }

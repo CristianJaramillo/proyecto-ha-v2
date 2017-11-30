@@ -54,7 +54,7 @@ namespace Proyecto_BD_HA_V2
         /// <param name="e"></param>
         private void SalesForm_Load(object sender, EventArgs e)
         {
-            var cmd = Connection.GetMysqlCommand(show_client_id);
+            var cmd = Connection.GetCommand(show_client_id);
             var reader = cmd.ExecuteReader();
 
             if (reader.HasRows)
@@ -67,7 +67,7 @@ namespace Proyecto_BD_HA_V2
 
             Connection.Close();
 
-            cmd = Connection.GetMysqlCommand(show_product_id);
+            cmd = Connection.GetCommand(show_product_id);
             reader = cmd.ExecuteReader();
 
             if (reader.HasRows)
@@ -100,7 +100,7 @@ namespace Proyecto_BD_HA_V2
         {
             if (!IsValidClientID()) return;
 
-            var cmd = Connection.GetMysqlCommand(string.Format(find_client_by_id, clientID));
+            var cmd = Connection.GetCommand(string.Format(find_client_by_id, clientID));
             var reader = cmd.ExecuteReader();
 
             if (reader.HasRows)
@@ -216,7 +216,7 @@ namespace Proyecto_BD_HA_V2
 
             if (int.TryParse(ProductCountMetroTextBox.Text, out productCount))
             {
-                var cmd = Connection.GetMysqlCommand(string.Format(find_product_by_id, productID));
+                var cmd = Connection.GetCommand(string.Format(find_product_by_id, productID));
                 var reader = cmd.ExecuteReader();
 
                 if (reader.HasRows)
@@ -318,7 +318,7 @@ namespace Proyecto_BD_HA_V2
             }
 
             // Creamos una nueva factura
-            var cmd = Connection.GetMysqlCommand(string.Format(insert_factura, clientID, userId));
+            var cmd = Connection.GetCommand(string.Format(insert_factura, clientID, userId));
             var reader = cmd.ExecuteReader();
             int idBill = -1;
 
@@ -334,7 +334,7 @@ namespace Proyecto_BD_HA_V2
 
             if (idBill != -1)
             {
-                cmd = Connection.GetMysqlCommand(GenerateVenta(idBill));
+                cmd = Connection.GetCommand(GenerateVenta(idBill));
                 reader = cmd.ExecuteReader();
                 Connection.Close();
 
@@ -353,7 +353,7 @@ namespace Proyecto_BD_HA_V2
         /// <returns></returns>
         private bool IsEmptyGrid()
         {
-            return SaleMetroGrid.Rows.Count == 0 || SaleMetroGrid.Rows.Count == 1;
+            return SaleMetroGrid.Rows.Count == 0;
         }
 
         /// <summary>
@@ -368,11 +368,11 @@ namespace Proyecto_BD_HA_V2
             var update_productos = "UPDATE productos SET Stock=Stock - {0} WHERE idProducto={1};";
             var updates = "";
 
-            for (int i = 0; i < SaleMetroGrid.Rows.Count - 1; i++)
+            for (int i = 0; i < SaleMetroGrid.Rows.Count; i++)
             {
                 insert_register_ventas += String.Format("({0}, {1}, {2})", id, SaleMetroGrid.Rows[i].Cells[0].Value, SaleMetroGrid.Rows[i].Cells[4].Value);
                 updates += string.Format(update_productos, SaleMetroGrid.Rows[i].Cells[4].Value, SaleMetroGrid.Rows[i].Cells[0].Value);
-                if ((i + 1) < SaleMetroGrid.Rows.Count - 1)
+                if ((i + 1) < SaleMetroGrid.Rows.Count)
                     insert_register_ventas += ", ";
             }
 
