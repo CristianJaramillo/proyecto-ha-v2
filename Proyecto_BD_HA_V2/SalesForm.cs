@@ -365,14 +365,18 @@ namespace Proyecto_BD_HA_V2
         {
             var insert_register_ventas = "INSERT INTO detalle (Factura_idFactura, Productos_idProducto, Cantidad) VALUES ";
 
+            var update_productos = "UPDATE productos SET Stock=Stock - {0} WHERE idProducto={1};";
+            var updates = "";
+
             for (int i = 0; i < SaleMetroGrid.Rows.Count - 1; i++)
             {
                 insert_register_ventas += String.Format("({0}, {1}, {2})", id, SaleMetroGrid.Rows[i].Cells[0].Value, SaleMetroGrid.Rows[i].Cells[4].Value);
+                updates += string.Format(update_productos, SaleMetroGrid.Rows[i].Cells[4].Value, SaleMetroGrid.Rows[i].Cells[0].Value);
                 if ((i + 1) < SaleMetroGrid.Rows.Count - 1)
                     insert_register_ventas += ", ";
             }
 
-            return insert_register_ventas;
+            return insert_register_ventas + ";" + updates;
 
         }
 
