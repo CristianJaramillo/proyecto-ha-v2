@@ -23,10 +23,12 @@ namespace Proyecto_BD_HA_V2
 
         private static string show_client_id = "SELECT idCliente FROM cliente";
         private static string show_product_id = "SELECT idproducto FROM productos";
+        private string insert_factura = "INSERT INTO factura (Cliente_idCliente, Responsable_idResponsable, Fecha) VALUES ({0}, {1}, CURRENT_TIMESTAMP()); SELECT LAST_INSERT_ID();";
         private static string find_client_by_id = "SELECT * FROM cliente WHERE idCliente='{0}' LIMIT 1";
         private static string find_product_by_id = "SELECT * FROM productos WHERE idProducto='{0}' LIMIT 1";
 
         private string clientID;
+        private string clientName;
         private string productID;
         private int productCount;
         private int stock;
@@ -132,6 +134,27 @@ namespace Proyecto_BD_HA_V2
             }
 
             return !ClientIDErrorMetroLabel.Visible;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool IsValidClienName()
+        {
+            clientName = ClientNameMetroTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(clientName))
+            {
+                ClientNameErrorMetroLabel.Text = "El campo \"Nombre de cliente\" es requerido";
+                ClientNameErrorMetroLabel.Visible = true;
+            }
+            else
+            {
+                ClientNameErrorMetroLabel.Visible = false;
+            }
+
+            return !ClientNameErrorMetroLabel.Visible;
         }
 
         /// <summary>
@@ -285,18 +308,52 @@ namespace Proyecto_BD_HA_V2
         private void FinishSaleMetroButton_Click(object sender, EventArgs e)
         {
             if (!IsValidClientID()) return;
+            if (!IsValidClienName()) return;
             if (!IsValidProductID()) return;
             if (!IsValidProductCount()) return;
+            if (IsEmptyGrid())
+            {
+                MetroMessageBox.Show(this, "Por favor agrege productos a su compra!", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            var factura = new Factura();
-            factura.Responsable_idResponsable = userId;
-            factura.Cliente_idCliente = clientID;
-
-            int resultado = TablaFactura.AgregarFactura(factura);
-
-            var cmd = Connection.GetMysqlCommand(GenerateVenta(resultado));
+            // Creamos una nueva factura
+            var cmd = Connection.GetMysqlCommand(string.Format(insert_factura, clientID, userId));
             var reader = cmd.ExecuteReader();
+            int idBill = -1;
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                    idBill = reader.GetInt32(0);
+            }
+
+            reader.Close();
+            
             Connection.Close();
+
+            if (idBill != -1)
+            {
+                cmd = Connection.GetMysqlCommand(GenerateVenta(idBill));
+                reader = cmd.ExecuteReader();
+                Connection.Close();
+
+                ProductIDMetroComboBox.Text = ProductCountMetroTextBox.Text = string.Empty;
+                ClientIDMetroComboBox.Text = ClientNameMetroTextBox.Text = string.Empty;
+                SaleMetroGrid.Rows.Clear();
+                UpdateMontoVenta();
+                MetroMessageBox.Show(this, "Su compra ha sido un exito!", Text, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool IsEmptyGrid()
+        {
+            return SaleMetroGrid.Rows.Count == 0 || SaleMetroGrid.Rows.Count == 1;
         }
 
         /// <summary>
