@@ -29,8 +29,7 @@ namespace Proyecto_BD_HA_V2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Alta_Productos altaprod = new Alta_Productos();
-            altaprod.Recibir(userId);
+            Alta_Productos altaprod = new Alta_Productos(this, userId);
             altaprod.Show();
         }
 
@@ -54,8 +53,7 @@ namespace Proyecto_BD_HA_V2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Cambio_datos cambio = new Cambio_datos();
-            cambio.Recibir(userId);
+            Cambio_datos cambio = new Cambio_datos(this, userId);
             cambio.Show();
         }
 

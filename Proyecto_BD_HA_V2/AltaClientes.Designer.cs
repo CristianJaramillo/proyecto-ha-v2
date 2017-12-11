@@ -30,187 +30,333 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaClientes));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textoTel = new System.Windows.Forms.TextBox();
-            this.textoDir = new System.Windows.Forms.TextBox();
-            this.textoApe = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textoNom = new System.Windows.Forms.TextBox();
-            this.textoEmail = new System.Windows.Forms.TextBox();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NameErrorMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.NameMetroTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.NameMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.LastNameErrorMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.LastNameMetroTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.LastNameMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.AddressErrorMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.AddressMetroTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.AddressMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.PhoneErrorMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.PhoneMetroTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.PhoneMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.EmailErrorMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.EmailMetroTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.EmailMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.RegisterMetroButton = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(489, 400);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 50);
-            this.button2.TabIndex = 95;
-            this.button2.Text = "Registrar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(43, 400);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 50);
-            this.button1.TabIndex = 94;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(433, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 18);
-            this.label3.TabIndex = 91;
-            this.label3.Text = "Registro de clientes";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(245, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 26);
-            this.label1.TabIndex = 89;
-            this.label1.Text = "Alta Cliente";
-            // 
-            // textoTel
-            // 
-            this.textoTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic);
-            this.textoTel.Location = new System.Drawing.Point(207, 259);
-            this.textoTel.Name = "textoTel";
-            this.textoTel.Size = new System.Drawing.Size(364, 26);
-            this.textoTel.TabIndex = 88;
-            // 
-            // textoDir
-            // 
-            this.textoDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic);
-            this.textoDir.Location = new System.Drawing.Point(207, 229);
-            this.textoDir.Name = "textoDir";
-            this.textoDir.Size = new System.Drawing.Size(364, 26);
-            this.textoDir.TabIndex = 87;
-            // 
-            // textoApe
-            // 
-            this.textoApe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic);
-            this.textoApe.Location = new System.Drawing.Point(207, 199);
-            this.textoApe.Name = "textoApe";
-            this.textoApe.Size = new System.Drawing.Size(364, 26);
-            this.textoApe.TabIndex = 86;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(49, 289);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 24);
-            this.label11.TabIndex = 85;
-            this.label11.Text = "E-mail *";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(49, 260);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 24);
-            this.label12.TabIndex = 84;
-            this.label12.Text = "Telefono *";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(49, 230);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 24);
-            this.label10.TabIndex = 83;
-            this.label10.Text = "Direccion *";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(49, 200);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 24);
-            this.label8.TabIndex = 82;
-            this.label8.Text = "Apellidos *";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(49, 171);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 24);
-            this.label9.TabIndex = 81;
-            this.label9.Text = "Nombre *";
-            // 
-            // textoNom
-            // 
-            this.textoNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic);
-            this.textoNom.Location = new System.Drawing.Point(207, 170);
-            this.textoNom.Name = "textoNom";
-            this.textoNom.Size = new System.Drawing.Size(364, 26);
-            this.textoNom.TabIndex = 80;
-            // 
-            // textoEmail
-            // 
-            this.textoEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic);
-            this.textoEmail.Location = new System.Drawing.Point(207, 288);
-            this.textoEmail.Name = "textoEmail";
-            this.textoEmail.Size = new System.Drawing.Size(364, 26);
-            this.textoEmail.TabIndex = 96;
-            this.textoEmail.Validated += new System.EventHandler(this.textoEmail_Validated);
             // 
             // error
             // 
             this.error.ContainerControl = this;
+            // 
+            // NameErrorMetroLabel
+            // 
+            this.NameErrorMetroLabel.AutoSize = true;
+            this.NameErrorMetroLabel.Location = new System.Drawing.Point(22, 110);
+            this.NameErrorMetroLabel.Name = "NameErrorMetroLabel";
+            this.NameErrorMetroLabel.Size = new System.Drawing.Size(76, 19);
+            this.NameErrorMetroLabel.Style = MetroFramework.MetroColorStyle.Red;
+            this.NameErrorMetroLabel.TabIndex = 106;
+            this.NameErrorMetroLabel.Text = "name error";
+            this.NameErrorMetroLabel.UseStyleColors = true;
+            this.NameErrorMetroLabel.Visible = false;
+            // 
+            // NameMetroTextBox
+            // 
+            // 
+            // 
+            // 
+            this.NameMetroTextBox.CustomButton.Image = null;
+            this.NameMetroTextBox.CustomButton.Location = new System.Drawing.Point(276, 1);
+            this.NameMetroTextBox.CustomButton.Name = "";
+            this.NameMetroTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.NameMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.NameMetroTextBox.CustomButton.TabIndex = 1;
+            this.NameMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.NameMetroTextBox.CustomButton.UseSelectable = true;
+            this.NameMetroTextBox.CustomButton.Visible = false;
+            this.NameMetroTextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.NameMetroTextBox.Lines = new string[0];
+            this.NameMetroTextBox.Location = new System.Drawing.Point(23, 82);
+            this.NameMetroTextBox.MaxLength = 32767;
+            this.NameMetroTextBox.Name = "NameMetroTextBox";
+            this.NameMetroTextBox.PasswordChar = '\0';
+            this.NameMetroTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.NameMetroTextBox.SelectedText = "";
+            this.NameMetroTextBox.SelectionLength = 0;
+            this.NameMetroTextBox.SelectionStart = 0;
+            this.NameMetroTextBox.ShortcutsEnabled = true;
+            this.NameMetroTextBox.Size = new System.Drawing.Size(300, 25);
+            this.NameMetroTextBox.TabIndex = 105;
+            this.NameMetroTextBox.UseSelectable = true;
+            this.NameMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.NameMetroTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // NameMetroLabel
+            // 
+            this.NameMetroLabel.AutoSize = true;
+            this.NameMetroLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.NameMetroLabel.Location = new System.Drawing.Point(23, 60);
+            this.NameMetroLabel.Name = "NameMetroLabel";
+            this.NameMetroLabel.Size = new System.Drawing.Size(59, 19);
+            this.NameMetroLabel.TabIndex = 104;
+            this.NameMetroLabel.Text = "Nombre";
+            // 
+            // LastNameErrorMetroLabel
+            // 
+            this.LastNameErrorMetroLabel.AutoSize = true;
+            this.LastNameErrorMetroLabel.Location = new System.Drawing.Point(22, 179);
+            this.LastNameErrorMetroLabel.Name = "LastNameErrorMetroLabel";
+            this.LastNameErrorMetroLabel.Size = new System.Drawing.Size(76, 19);
+            this.LastNameErrorMetroLabel.Style = MetroFramework.MetroColorStyle.Red;
+            this.LastNameErrorMetroLabel.TabIndex = 109;
+            this.LastNameErrorMetroLabel.Text = "name error";
+            this.LastNameErrorMetroLabel.UseStyleColors = true;
+            this.LastNameErrorMetroLabel.Visible = false;
+            // 
+            // LastNameMetroTextBox
+            // 
+            // 
+            // 
+            // 
+            this.LastNameMetroTextBox.CustomButton.Image = null;
+            this.LastNameMetroTextBox.CustomButton.Location = new System.Drawing.Point(276, 1);
+            this.LastNameMetroTextBox.CustomButton.Name = "";
+            this.LastNameMetroTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.LastNameMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.LastNameMetroTextBox.CustomButton.TabIndex = 1;
+            this.LastNameMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.LastNameMetroTextBox.CustomButton.UseSelectable = true;
+            this.LastNameMetroTextBox.CustomButton.Visible = false;
+            this.LastNameMetroTextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.LastNameMetroTextBox.Lines = new string[0];
+            this.LastNameMetroTextBox.Location = new System.Drawing.Point(23, 151);
+            this.LastNameMetroTextBox.MaxLength = 32767;
+            this.LastNameMetroTextBox.Name = "LastNameMetroTextBox";
+            this.LastNameMetroTextBox.PasswordChar = '\0';
+            this.LastNameMetroTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.LastNameMetroTextBox.SelectedText = "";
+            this.LastNameMetroTextBox.SelectionLength = 0;
+            this.LastNameMetroTextBox.SelectionStart = 0;
+            this.LastNameMetroTextBox.ShortcutsEnabled = true;
+            this.LastNameMetroTextBox.Size = new System.Drawing.Size(300, 25);
+            this.LastNameMetroTextBox.TabIndex = 108;
+            this.LastNameMetroTextBox.UseSelectable = true;
+            this.LastNameMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.LastNameMetroTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // LastNameMetroLabel
+            // 
+            this.LastNameMetroLabel.AutoSize = true;
+            this.LastNameMetroLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.LastNameMetroLabel.Location = new System.Drawing.Point(23, 129);
+            this.LastNameMetroLabel.Name = "LastNameMetroLabel";
+            this.LastNameMetroLabel.Size = new System.Drawing.Size(64, 19);
+            this.LastNameMetroLabel.TabIndex = 107;
+            this.LastNameMetroLabel.Text = "Apellidos";
+            // 
+            // AddressErrorMetroLabel
+            // 
+            this.AddressErrorMetroLabel.AutoSize = true;
+            this.AddressErrorMetroLabel.Location = new System.Drawing.Point(22, 248);
+            this.AddressErrorMetroLabel.Name = "AddressErrorMetroLabel";
+            this.AddressErrorMetroLabel.Size = new System.Drawing.Size(76, 19);
+            this.AddressErrorMetroLabel.Style = MetroFramework.MetroColorStyle.Red;
+            this.AddressErrorMetroLabel.TabIndex = 112;
+            this.AddressErrorMetroLabel.Text = "name error";
+            this.AddressErrorMetroLabel.UseStyleColors = true;
+            this.AddressErrorMetroLabel.Visible = false;
+            // 
+            // AddressMetroTextBox
+            // 
+            // 
+            // 
+            // 
+            this.AddressMetroTextBox.CustomButton.Image = null;
+            this.AddressMetroTextBox.CustomButton.Location = new System.Drawing.Point(276, 1);
+            this.AddressMetroTextBox.CustomButton.Name = "";
+            this.AddressMetroTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.AddressMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.AddressMetroTextBox.CustomButton.TabIndex = 1;
+            this.AddressMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.AddressMetroTextBox.CustomButton.UseSelectable = true;
+            this.AddressMetroTextBox.CustomButton.Visible = false;
+            this.AddressMetroTextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.AddressMetroTextBox.Lines = new string[0];
+            this.AddressMetroTextBox.Location = new System.Drawing.Point(23, 220);
+            this.AddressMetroTextBox.MaxLength = 32767;
+            this.AddressMetroTextBox.Name = "AddressMetroTextBox";
+            this.AddressMetroTextBox.PasswordChar = '\0';
+            this.AddressMetroTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.AddressMetroTextBox.SelectedText = "";
+            this.AddressMetroTextBox.SelectionLength = 0;
+            this.AddressMetroTextBox.SelectionStart = 0;
+            this.AddressMetroTextBox.ShortcutsEnabled = true;
+            this.AddressMetroTextBox.Size = new System.Drawing.Size(300, 25);
+            this.AddressMetroTextBox.TabIndex = 111;
+            this.AddressMetroTextBox.UseSelectable = true;
+            this.AddressMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.AddressMetroTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // AddressMetroLabel
+            // 
+            this.AddressMetroLabel.AutoSize = true;
+            this.AddressMetroLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.AddressMetroLabel.Location = new System.Drawing.Point(23, 198);
+            this.AddressMetroLabel.Name = "AddressMetroLabel";
+            this.AddressMetroLabel.Size = new System.Drawing.Size(65, 19);
+            this.AddressMetroLabel.TabIndex = 110;
+            this.AddressMetroLabel.Text = "Dirección";
+            // 
+            // PhoneErrorMetroLabel
+            // 
+            this.PhoneErrorMetroLabel.AutoSize = true;
+            this.PhoneErrorMetroLabel.Location = new System.Drawing.Point(21, 317);
+            this.PhoneErrorMetroLabel.Name = "PhoneErrorMetroLabel";
+            this.PhoneErrorMetroLabel.Size = new System.Drawing.Size(76, 19);
+            this.PhoneErrorMetroLabel.Style = MetroFramework.MetroColorStyle.Red;
+            this.PhoneErrorMetroLabel.TabIndex = 115;
+            this.PhoneErrorMetroLabel.Text = "name error";
+            this.PhoneErrorMetroLabel.UseStyleColors = true;
+            this.PhoneErrorMetroLabel.Visible = false;
+            // 
+            // PhoneMetroTextBox
+            // 
+            // 
+            // 
+            // 
+            this.PhoneMetroTextBox.CustomButton.Image = null;
+            this.PhoneMetroTextBox.CustomButton.Location = new System.Drawing.Point(276, 1);
+            this.PhoneMetroTextBox.CustomButton.Name = "";
+            this.PhoneMetroTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.PhoneMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.PhoneMetroTextBox.CustomButton.TabIndex = 1;
+            this.PhoneMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.PhoneMetroTextBox.CustomButton.UseSelectable = true;
+            this.PhoneMetroTextBox.CustomButton.Visible = false;
+            this.PhoneMetroTextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.PhoneMetroTextBox.Lines = new string[0];
+            this.PhoneMetroTextBox.Location = new System.Drawing.Point(22, 289);
+            this.PhoneMetroTextBox.MaxLength = 32767;
+            this.PhoneMetroTextBox.Name = "PhoneMetroTextBox";
+            this.PhoneMetroTextBox.PasswordChar = '\0';
+            this.PhoneMetroTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.PhoneMetroTextBox.SelectedText = "";
+            this.PhoneMetroTextBox.SelectionLength = 0;
+            this.PhoneMetroTextBox.SelectionStart = 0;
+            this.PhoneMetroTextBox.ShortcutsEnabled = true;
+            this.PhoneMetroTextBox.Size = new System.Drawing.Size(300, 25);
+            this.PhoneMetroTextBox.TabIndex = 114;
+            this.PhoneMetroTextBox.UseSelectable = true;
+            this.PhoneMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.PhoneMetroTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // PhoneMetroLabel
+            // 
+            this.PhoneMetroLabel.AutoSize = true;
+            this.PhoneMetroLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.PhoneMetroLabel.Location = new System.Drawing.Point(22, 267);
+            this.PhoneMetroLabel.Name = "PhoneMetroLabel";
+            this.PhoneMetroLabel.Size = new System.Drawing.Size(60, 19);
+            this.PhoneMetroLabel.TabIndex = 113;
+            this.PhoneMetroLabel.Text = "Télefono";
+            // 
+            // EmailErrorMetroLabel
+            // 
+            this.EmailErrorMetroLabel.AutoSize = true;
+            this.EmailErrorMetroLabel.Location = new System.Drawing.Point(22, 386);
+            this.EmailErrorMetroLabel.Name = "EmailErrorMetroLabel";
+            this.EmailErrorMetroLabel.Size = new System.Drawing.Size(76, 19);
+            this.EmailErrorMetroLabel.Style = MetroFramework.MetroColorStyle.Red;
+            this.EmailErrorMetroLabel.TabIndex = 118;
+            this.EmailErrorMetroLabel.Text = "name error";
+            this.EmailErrorMetroLabel.UseStyleColors = true;
+            this.EmailErrorMetroLabel.Visible = false;
+            // 
+            // EmailMetroTextBox
+            // 
+            // 
+            // 
+            // 
+            this.EmailMetroTextBox.CustomButton.Image = null;
+            this.EmailMetroTextBox.CustomButton.Location = new System.Drawing.Point(276, 1);
+            this.EmailMetroTextBox.CustomButton.Name = "";
+            this.EmailMetroTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.EmailMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.EmailMetroTextBox.CustomButton.TabIndex = 1;
+            this.EmailMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.EmailMetroTextBox.CustomButton.UseSelectable = true;
+            this.EmailMetroTextBox.CustomButton.Visible = false;
+            this.EmailMetroTextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.EmailMetroTextBox.Lines = new string[0];
+            this.EmailMetroTextBox.Location = new System.Drawing.Point(23, 358);
+            this.EmailMetroTextBox.MaxLength = 32767;
+            this.EmailMetroTextBox.Name = "EmailMetroTextBox";
+            this.EmailMetroTextBox.PasswordChar = '\0';
+            this.EmailMetroTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.EmailMetroTextBox.SelectedText = "";
+            this.EmailMetroTextBox.SelectionLength = 0;
+            this.EmailMetroTextBox.SelectionStart = 0;
+            this.EmailMetroTextBox.ShortcutsEnabled = true;
+            this.EmailMetroTextBox.Size = new System.Drawing.Size(300, 25);
+            this.EmailMetroTextBox.TabIndex = 117;
+            this.EmailMetroTextBox.UseSelectable = true;
+            this.EmailMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.EmailMetroTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // EmailMetroLabel
+            // 
+            this.EmailMetroLabel.AutoSize = true;
+            this.EmailMetroLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.EmailMetroLabel.Location = new System.Drawing.Point(23, 336);
+            this.EmailMetroLabel.Name = "EmailMetroLabel";
+            this.EmailMetroLabel.Size = new System.Drawing.Size(121, 19);
+            this.EmailMetroLabel.TabIndex = 116;
+            this.EmailMetroLabel.Text = "Correo Electrónico";
+            // 
+            // RegisterMetroButton
+            // 
+            this.RegisterMetroButton.Location = new System.Drawing.Point(507, 407);
+            this.RegisterMetroButton.Name = "RegisterMetroButton";
+            this.RegisterMetroButton.Size = new System.Drawing.Size(150, 30);
+            this.RegisterMetroButton.TabIndex = 119;
+            this.RegisterMetroButton.Text = "Registrar";
+            this.RegisterMetroButton.UseSelectable = true;
+            this.RegisterMetroButton.Click += new System.EventHandler(this.RegisterMetroButton_Click);
             // 
             // AltaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 460);
-            this.Controls.Add(this.textoEmail);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textoTel);
-            this.Controls.Add(this.textoDir);
-            this.Controls.Add(this.textoApe);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textoNom);
+            this.Controls.Add(this.RegisterMetroButton);
+            this.Controls.Add(this.EmailErrorMetroLabel);
+            this.Controls.Add(this.EmailMetroTextBox);
+            this.Controls.Add(this.EmailMetroLabel);
+            this.Controls.Add(this.PhoneErrorMetroLabel);
+            this.Controls.Add(this.PhoneMetroTextBox);
+            this.Controls.Add(this.PhoneMetroLabel);
+            this.Controls.Add(this.AddressErrorMetroLabel);
+            this.Controls.Add(this.AddressMetroTextBox);
+            this.Controls.Add(this.AddressMetroLabel);
+            this.Controls.Add(this.LastNameErrorMetroLabel);
+            this.Controls.Add(this.LastNameMetroTextBox);
+            this.Controls.Add(this.LastNameMetroLabel);
+            this.Controls.Add(this.NameErrorMetroLabel);
+            this.Controls.Add(this.NameMetroTextBox);
+            this.Controls.Add(this.NameMetroLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AltaClientes";
             this.Resizable = false;
             this.ShowIcon = false;
-            this.Text = "AltaClientes";
+            this.Text = "The Dark Uniforms - Registro de Clientes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AltaClientes_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,20 +364,22 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textoTel;
-        private System.Windows.Forms.TextBox textoDir;
-        private System.Windows.Forms.TextBox textoApe;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textoNom;
-        private System.Windows.Forms.TextBox textoEmail;
         private System.Windows.Forms.ErrorProvider error;
+        private MetroFramework.Controls.MetroButton RegisterMetroButton;
+        private MetroFramework.Controls.MetroLabel EmailErrorMetroLabel;
+        private MetroFramework.Controls.MetroTextBox EmailMetroTextBox;
+        private MetroFramework.Controls.MetroLabel EmailMetroLabel;
+        private MetroFramework.Controls.MetroLabel PhoneErrorMetroLabel;
+        private MetroFramework.Controls.MetroTextBox PhoneMetroTextBox;
+        private MetroFramework.Controls.MetroLabel PhoneMetroLabel;
+        private MetroFramework.Controls.MetroLabel AddressErrorMetroLabel;
+        private MetroFramework.Controls.MetroTextBox AddressMetroTextBox;
+        private MetroFramework.Controls.MetroLabel AddressMetroLabel;
+        private MetroFramework.Controls.MetroLabel LastNameErrorMetroLabel;
+        private MetroFramework.Controls.MetroTextBox LastNameMetroTextBox;
+        private MetroFramework.Controls.MetroLabel LastNameMetroLabel;
+        private MetroFramework.Controls.MetroLabel NameErrorMetroLabel;
+        private MetroFramework.Controls.MetroTextBox NameMetroTextBox;
+        private MetroFramework.Controls.MetroLabel NameMetroLabel;
     }
 }

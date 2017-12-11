@@ -119,7 +119,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button6);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MenuVendedor";
+            this.Resizable = false;
             this.Text = "The Dark Uniforms - Vendedor";
             this.ResumeLayout(false);
             this.PerformLayout();

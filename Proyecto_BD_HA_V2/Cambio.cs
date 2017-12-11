@@ -77,7 +77,6 @@ namespace Proyecto_BD_HA_V2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Cambio_datos ca = new Cambio_datos();
             bool[] numerico = new bool[] {true}; // Para verificar si es numerico
             numerico[0] = Numerico.EsNumerico(textBox1.Text.Trim());
 
@@ -89,7 +88,6 @@ namespace Proyecto_BD_HA_V2
                     {
                         int id = Convert.ToInt32(dataGridViewcambio.CurrentRow.Cells[0].Value);
                         ProductoSelect = TablaProducto.ObtenerProductos(id);
-                        ca.RecibirCambio(id);
                         this.Close();
                     }
                     else

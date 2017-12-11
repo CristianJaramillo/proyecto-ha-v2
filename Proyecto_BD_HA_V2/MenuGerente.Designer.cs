@@ -158,7 +158,7 @@
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.Location = new System.Drawing.Point(459, 233);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(71, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(65, 19);
             this.metroLabel3.TabIndex = 216;
             this.metroLabel3.Text = "Producto";
             // 
@@ -212,6 +212,7 @@
             this.Controls.Add(this.ClientsButton);
             this.Controls.Add(this.UsersButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MenuGerente";
             this.Resizable = false;
             this.Text = "The Dark Uniforms - Administardor";

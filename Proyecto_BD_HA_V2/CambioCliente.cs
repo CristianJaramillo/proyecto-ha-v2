@@ -13,9 +13,17 @@ namespace Proyecto_BD_HA_V2
 {
     public partial class CambioCliente : MetroForm
     {
-        public CambioCliente()
+
+        private Form parent;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parent"></param>
+        public CambioCliente(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,6 +86,16 @@ namespace Proyecto_BD_HA_V2
         private void CambioCliente_Load(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CambioCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parent.Show();
         }
     }
 }

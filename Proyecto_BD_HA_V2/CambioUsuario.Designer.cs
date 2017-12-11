@@ -417,8 +417,10 @@
             this.Controls.Add(this.ClientIDErrorMetroLabel);
             this.Controls.Add(this.ClientIDMetroLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "CambioUsuario";
-            this.Text = "The Dark Uniforms - Actualizar Datos de Cliente";
+            this.Resizable = false;
+            this.Text = "The Dark Uniforms - Actualizar Datos de Usuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CambioUsuario_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

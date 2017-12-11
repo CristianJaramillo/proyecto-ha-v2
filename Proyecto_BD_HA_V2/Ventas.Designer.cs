@@ -133,7 +133,6 @@
             this.button3.TabIndex = 98;
             this.button3.Text = "Ver BD Clientes";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -143,7 +142,6 @@
             this.button4.TabIndex = 99;
             this.button4.Text = "Ver BD Producto";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnVenProd
             // 
@@ -235,7 +233,9 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label8);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Ventas";
+            this.Resizable = false;
             this.Text = "Tthe Dark Uniforms - Ventas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ventas_FormClosing);
             this.Load += new System.EventHandler(this.Ventas_Load);

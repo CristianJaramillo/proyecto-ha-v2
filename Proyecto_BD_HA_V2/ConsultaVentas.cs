@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data; // Nuevo
-using MySql.Data.MySqlClient;
-using System.Xml;
-using System.Xml.Serialization;
 using MetroFramework.Forms;
+using Proyecto_BD_HA_V2.Store;
+using MetroFramework;
+using System.Globalization;
 
 namespace Proyecto_BD_HA_V2
 {
@@ -20,9 +12,11 @@ namespace Proyecto_BD_HA_V2
 
         #region
         private Form parent;
-        private Form childre;
         private string userId;
         #endregion
+
+        private static string SEARCH_BILL_DETAILS = "SELECT * FROM detalle, productos WHERE detalle.Factura_idFactura={0} AND productos.idProducto=detalle.Productos_idProducto;";
+        private int BillID;
 
         /// <summary>
         /// 
@@ -31,43 +25,6 @@ namespace Proyecto_BD_HA_V2
         {
             InitializeComponent();
             this.parent = parent;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            bool[] numerico = new bool[] { true }; // Para verificar si es numerico
-            numerico[0] = Numerico.EsNumerico(textBox1.Text.Trim());
-
-            if (textBox1.Text.Trim() != "")
-            {
-                if (numerico[0] == true)
-                {
-                    dataGridViewBuscar.DataSource = TablaVentas.Buscar(textBox1.Text);
-                }
-                else
-                {
-                    MessageBox.Show("El campo de texto con asterisco, Deben de ser numeros enteros");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe de rellenar los campos con asterisco");
-            }
-        }
-
-        DataTable dtDatos = new DataTable();
-        DataSet dtSet = new DataSet();
-        
-
-        private void btnXML_Click(object sender, EventArgs e)
-        {
-            ControlReporte re = new ControlReporte(textBox1.Text.Trim());
-            re.Show();
         }
 
         /// <summary>
@@ -79,5 +36,77 @@ namespace Proyecto_BD_HA_V2
         {
             parent.Show();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SearchMetroButton_Click(object sender, EventArgs e)
+        {
+            if (!IsValidBillID()) return;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool IsValidBillID()
+        {
+
+            var searchID = SearchTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchID))
+            {
+                BillErrorMetroLabel.Text = "El campo \"Factura ID\" es requerido";
+                BillErrorMetroLabel.Visible = true;
+            }
+            else if (int.TryParse(searchID, out BillID))
+            {
+
+                BillMetroGrid.Rows.Clear();
+
+                var cmd = Connection.GetCommand(string.Format(SEARCH_BILL_DETAILS, BillID));
+                var reader = cmd.ExecuteReader();
+
+                var total = 0.00;
+
+                if (reader.HasRows)
+                {
+
+                    while (reader.Read())
+                    {
+                        BillMetroGrid.Rows.Add(
+                                reader.GetInt32(1),
+                                reader.GetString(6),
+                                reader.GetInt32(3),
+                                reader.GetInt32(8),
+                                reader.GetString(7)
+                            );
+
+                        total += (reader.GetInt32(3) * reader.GetInt32(8));
+                    }
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, "No existe información de la factura!", this.Text + "- Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                reader.Close();
+                Connection.Close();
+                TotalVentaMetroLabel.Text = total.ToString("C", new CultureInfo("en-us"));
+                SearchTextBox.Clear();
+                BillErrorMetroLabel.Visible = false;
+
+            }
+            else
+            {
+                BillErrorMetroLabel.Text = "El campo \"Factura ID\" no es valido";
+                BillErrorMetroLabel.Visible = true;
+            }
+
+            return !BillErrorMetroLabel.Visible;
+        }
+
     }
 }

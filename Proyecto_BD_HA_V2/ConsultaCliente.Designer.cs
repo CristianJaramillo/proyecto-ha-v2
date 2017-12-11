@@ -28,140 +28,193 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaCliente));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridViewBuscar = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBuscar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
+            this.SearchMetroButton = new MetroFramework.Controls.MetroButton();
+            this.SearchUserMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.SearchClientMetroTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.ClientsMetroGrid = new MetroFramework.Controls.MetroGrid();
+            this.IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientsMetroGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // SearchMetroButton
             // 
-            this.button2.Location = new System.Drawing.Point(492, 408);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 50);
-            this.button2.TabIndex = 100;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.SearchMetroButton.Location = new System.Drawing.Point(595, 57);
+            this.SearchMetroButton.Name = "SearchMetroButton";
+            this.SearchMetroButton.Size = new System.Drawing.Size(66, 23);
+            this.SearchMetroButton.TabIndex = 97;
+            this.SearchMetroButton.Text = "Buscar";
+            this.SearchMetroButton.UseSelectable = true;
+            this.SearchMetroButton.Click += new System.EventHandler(this.SearchMetroButton_Click);
             // 
-            // button1
+            // SearchUserMetroLabel
             // 
-            this.button1.Location = new System.Drawing.Point(46, 408);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 50);
-            this.button1.TabIndex = 99;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SearchUserMetroLabel.AutoSize = true;
+            this.SearchUserMetroLabel.Location = new System.Drawing.Point(332, 57);
+            this.SearchUserMetroLabel.Name = "SearchUserMetroLabel";
+            this.SearchUserMetroLabel.Size = new System.Drawing.Size(85, 19);
+            this.SearchUserMetroLabel.TabIndex = 96;
+            this.SearchUserMetroLabel.Text = "Ingrese un ID";
             // 
-            // dataGridViewBuscar
+            // SearchClientMetroTextBox
             // 
-            this.dataGridViewBuscar.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBuscar.Location = new System.Drawing.Point(12, 149);
-            this.dataGridViewBuscar.Name = "dataGridViewBuscar";
-            this.dataGridViewBuscar.Size = new System.Drawing.Size(660, 253);
-            this.dataGridViewBuscar.TabIndex = 98;
             // 
-            // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(127, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(431, 24);
-            this.label4.TabIndex = 97;
-            this.label4.Text = "Ingrese el número de registro al que se consultara";
             // 
-            // textBox1
+            this.SearchClientMetroTextBox.CustomButton.Image = null;
+            this.SearchClientMetroTextBox.CustomButton.Location = new System.Drawing.Point(144, 1);
+            this.SearchClientMetroTextBox.CustomButton.Name = "";
+            this.SearchClientMetroTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.SearchClientMetroTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.SearchClientMetroTextBox.CustomButton.TabIndex = 1;
+            this.SearchClientMetroTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.SearchClientMetroTextBox.CustomButton.UseSelectable = true;
+            this.SearchClientMetroTextBox.CustomButton.Visible = false;
+            this.SearchClientMetroTextBox.Lines = new string[0];
+            this.SearchClientMetroTextBox.Location = new System.Drawing.Point(423, 57);
+            this.SearchClientMetroTextBox.MaxLength = 32767;
+            this.SearchClientMetroTextBox.Name = "SearchClientMetroTextBox";
+            this.SearchClientMetroTextBox.PasswordChar = '\0';
+            this.SearchClientMetroTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.SearchClientMetroTextBox.SelectedText = "";
+            this.SearchClientMetroTextBox.SelectionLength = 0;
+            this.SearchClientMetroTextBox.SelectionStart = 0;
+            this.SearchClientMetroTextBox.ShortcutsEnabled = true;
+            this.SearchClientMetroTextBox.Size = new System.Drawing.Size(166, 23);
+            this.SearchClientMetroTextBox.TabIndex = 95;
+            this.SearchClientMetroTextBox.UseSelectable = true;
+            this.SearchClientMetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.SearchClientMetroTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.textBox1.Location = new System.Drawing.Point(174, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(347, 20);
-            this.textBox1.TabIndex = 96;
-            this.textBox1.Validated += new System.EventHandler(this.textBox1_Validated);
+            // ClientsMetroGrid
             // 
-            // label3
+            this.ClientsMetroGrid.AllowUserToAddRows = false;
+            this.ClientsMetroGrid.AllowUserToDeleteRows = false;
+            this.ClientsMetroGrid.AllowUserToOrderColumns = true;
+            this.ClientsMetroGrid.AllowUserToResizeRows = false;
+            this.ClientsMetroGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClientsMetroGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ClientsMetroGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.ClientsMetroGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ClientsMetroGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.ClientsMetroGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ClientsMetroGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdColumn,
+            this.NameColumn,
+            this.LastNameColumn,
+            this.AddressColumn,
+            this.PhoneColumn,
+            this.EmailColumn});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClientsMetroGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ClientsMetroGrid.EnableHeadersVisualStyles = false;
+            this.ClientsMetroGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ClientsMetroGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClientsMetroGrid.Location = new System.Drawing.Point(21, 86);
+            this.ClientsMetroGrid.Name = "ClientsMetroGrid";
+            this.ClientsMetroGrid.ReadOnly = true;
+            this.ClientsMetroGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ClientsMetroGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.ClientsMetroGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.ClientsMetroGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ClientsMetroGrid.Size = new System.Drawing.Size(640, 353);
+            this.ClientsMetroGrid.TabIndex = 98;
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(317, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(355, 18);
-            this.label3.TabIndex = 93;
-            this.label3.Text = "Consultar el almacén mediante el número de registro";
+            // IdColumn
             // 
-            // label1
+            this.IdColumn.HeaderText = "ID";
+            this.IdColumn.Name = "IdColumn";
+            this.IdColumn.ReadOnly = true;
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(88, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 26);
-            this.label1.TabIndex = 91;
-            this.label1.Text = "Consulta";
+            // NameColumn
             // 
-            // error
+            this.NameColumn.HeaderText = "Name";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
             // 
-            this.error.ContainerControl = this;
+            // LastNameColumn
             // 
-            // label2
+            this.LastNameColumn.HeaderText = "Last Name";
+            this.LastNameColumn.Name = "LastNameColumn";
+            this.LastNameColumn.ReadOnly = true;
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Copperplate Gothic Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(48, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(605, 53);
-            this.label2.TabIndex = 207;
-            this.label2.Text = "THE DARK UNIFORMS";
+            // AddressColumn
+            // 
+            this.AddressColumn.HeaderText = "Address";
+            this.AddressColumn.Name = "AddressColumn";
+            this.AddressColumn.ReadOnly = true;
+            // 
+            // PhoneColumn
+            // 
+            this.PhoneColumn.HeaderText = "Phone";
+            this.PhoneColumn.Name = "PhoneColumn";
+            this.PhoneColumn.ReadOnly = true;
+            // 
+            // EmailColumn
+            // 
+            this.EmailColumn.HeaderText = "Email";
+            this.EmailColumn.Name = "EmailColumn";
+            this.EmailColumn.ReadOnly = true;
             // 
             // ConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(684, 462);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridViewBuscar);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ClientsMetroGrid);
+            this.Controls.Add(this.SearchMetroButton);
+            this.Controls.Add(this.SearchUserMetroLabel);
+            this.Controls.Add(this.SearchClientMetroTextBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ConsultaCliente";
-            this.Text = "ConsultaCliente";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBuscar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
+            this.Resizable = false;
+            this.Text = "The Dark Uniforms - Busqueda de Cliente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsultaCliente_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.ClientsMetroGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridViewBuscar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ErrorProvider error;
-        private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroButton SearchMetroButton;
+        private MetroFramework.Controls.MetroLabel SearchUserMetroLabel;
+        private MetroFramework.Controls.MetroTextBox SearchClientMetroTextBox;
+        private MetroFramework.Controls.MetroGrid ClientsMetroGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AddressColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmailColumn;
     }
 }

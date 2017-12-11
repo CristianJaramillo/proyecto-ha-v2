@@ -10,113 +10,208 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using MetroFramework.Forms;
+using System.Net.Mail;
+using MetroFramework;
+using Proyecto_BD_HA_V2.Store;
 
 namespace Proyecto_BD_HA_V2
 {
     public partial class AltaClientes : MetroForm
     {
-        public AltaClientes()
+
+#region
+        private Form parent;
+        #endregion
+
+
+        private static string NAME_PATTER = "^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\\']+[\\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\\'])+[\\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\\'])?$";
+        private static string PHONE_PATTER = @"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}";
+        private static string INSERT_CLIENT = "INSERT INTO cliente (Nombre, Apellidos, Direccion, Telefono, email) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')";
+
+        private string name;
+        private string lastName;
+        private string address;
+        private string phone;
+        private string email;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parent"></param>
+        public AltaClientes(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AltaClientes_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Hide();
+            parent.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RegisterMetroButton_Click(object sender, EventArgs e)
         {
-            Cliente pUsuario = new Cliente();
-            if (textoNom.Text.Trim() != "" && textoApe.Text.Trim() != "" && textoDir.Text.Trim() != "" && textoTel.Text.Trim() != "" && textoEmail.Text.Trim() != "")
+            if (!IsValidName()) return;
+            if (!IsValidLastName()) return;
+            if (!IsValidAddress()) return;
+            if (!IsValidPhone()) return;
+            if (!IsValidEmail()) return;
+
+            var cmd = Connection.GetCommand(string.Format(INSERT_CLIENT, name, lastName, address, phone, email));
+            var reader = cmd.ExecuteReader();
+            Connection.Close();
+
+            NameMetroTextBox.Text = name = string.Empty;
+            LastNameMetroTextBox.Text = lastName = string.Empty;
+            AddressMetroTextBox.Text = address = string.Empty;
+            PhoneMetroTextBox.Text = phone = string.Empty;
+            EmailMetroTextBox.Text = email = string.Empty;
+
+            MetroMessageBox.Show(this, "Cliente registrado con exito!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool IsValidName()
+        {
+            name = NameMetroTextBox.Text.Trim();
+            lastName = LastNameMetroTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(name))
             {
-                pUsuario.Nombre = textoNom.Text.Trim();
-                pUsuario.Apellidos = textoApe.Text.Trim();
-                pUsuario.Direccion = textoDir.Text.Trim();
-                pUsuario.Telefono = textoTel.Text.Trim();
-                pUsuario.Email = textoEmail.Text.Trim();
-                int resultado = TablaCliente.AgregarCliente(pUsuario);
+                NameErrorMetroLabel.Text = "El campo \"nombre\" es requerido";
+                NameErrorMetroLabel.Visible = true;
+            }
+            else
+            {
+                NameErrorMetroLabel.Visible = false;
+            }
 
-                if (resultado > 0)
+            return !NameErrorMetroLabel.Visible;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool IsValidLastName()
+        {
+            lastName = LastNameMetroTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(lastName))
+            {
+                LastNameErrorMetroLabel.Text = "El campo \"apellido\" es requerido";
+                LastNameErrorMetroLabel.Visible = true;
+            }
+            else if (!Regex.IsMatch(name + " " + lastName, NAME_PATTER))
+            {
+                LastNameErrorMetroLabel.Text = "El campo \"apellido\" no es valido";
+                LastNameErrorMetroLabel.Visible = true;
+            }
+            else
+            {
+                LastNameErrorMetroLabel.Visible = false;
+            }
+
+            return !LastNameErrorMetroLabel.Visible;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool IsValidAddress()
+        {
+            address = AddressMetroTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(address))
+            {
+                AddressErrorMetroLabel.Text = "El campo \"dirección\" es requerido";
+                AddressErrorMetroLabel.Visible = true;
+            }
+            else if (address.Length > 50)
+            {
+                AddressErrorMetroLabel.Text = "El campo \"dirección\" no puede ser mayor a 50 caracteres";
+                AddressErrorMetroLabel.Visible = true;
+            }
+            else
+            {
+                AddressErrorMetroLabel.Visible = false;
+            }
+
+            return !AddressErrorMetroLabel.Visible;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool IsValidEmail()
+        {
+            email = EmailMetroTextBox.Text.Trim();
+
+            try
+            {
+
+                if (string.IsNullOrEmpty(email))
                 {
-                    MessageBox.Show("Usuario Registrado");
-                    Hide();
+                    EmailErrorMetroLabel.Text = "El campo \"correo electrónico\" es requerido";
+                    EmailErrorMetroLabel.Visible = true;
                 }
                 else
                 {
-                    MessageBox.Show("El Usuario ya existe");
-                    Hide();
+                    MailAddress mailAddres = new MailAddress(email);
+                    EmailErrorMetroLabel.Visible = false;
                 }
             }
-            else
+            catch (FormatException)
             {
-                MessageBox.Show("Debe de rellenar los campos con asterisco");
+                EmailErrorMetroLabel.Text = "El campo \"correo electrónico\" es invalido!";
+                EmailErrorMetroLabel.Visible = true;
             }
+
+
+            return !EmailErrorMetroLabel.Visible;
         }
 
-        bool invalido = false;
-
-        public bool EsCorreo(string email)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool IsValidPhone()
         {
-            invalido = false;
-            if (String.IsNullOrEmpty(email))
-                return false;
+            phone = PhoneMetroTextBox.Text.Trim();
 
-            try
+            if (string.IsNullOrEmpty(phone))
             {
-                email = Regex.Replace(email, @"(@)(.+)$", this.DominioMapa, RegexOptions.None, TimeSpan.FromMilliseconds(200));
+                PhoneErrorMetroLabel.Text = "El campo \"teléfono\" es requerido";
+                PhoneErrorMetroLabel.Visible = true;
             }
-            catch (RegexMatchTimeoutException)
+            else if (!Regex.IsMatch(phone, PHONE_PATTER))
             {
-                return false;
-            }
-            if (invalido)
-                return false;
-
-            try
-            {
-                return Regex.IsMatch(email, @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-                @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",
-                RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
-            }
-            catch (RegexMatchTimeoutException)
-            {
-                return false;
-            }
-        }
-
-        private string DominioMapa(Match match)
-        {
-            IdnMapping idn = new IdnMapping();
-
-            string dominioNombre = match.Groups[2].Value;
-            try
-            {
-                dominioNombre = idn.GetAscii(dominioNombre);
-            }
-            catch (ArgumentException)
-            {
-                invalido = true;
-            }
-            return match.Groups[1].Value + dominioNombre;
-        }
-
-        private void textoEmail_Validated(object sender, EventArgs e)
-        {
-            if (!EsCorreo(textoEmail.Text))
-            {
-                error.SetError(textoEmail, "debe ingresar un correo valido");
-                //                textBox1.Focus(); // Para restringir al usuario que ingrese un numero
+                PhoneErrorMetroLabel.Text = "El campo \"teléfono\" no es valido";
+                PhoneErrorMetroLabel.Visible = true;
             }
             else
             {
-                error.Clear();
+                PhoneErrorMetroLabel.Visible = false;
             }
+
+            return !PhoneErrorMetroLabel.Visible;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

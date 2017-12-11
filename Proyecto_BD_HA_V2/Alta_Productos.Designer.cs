@@ -48,82 +48,75 @@
             // textoPrecio
             // 
             this.textoPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Italic);
-            this.textoPrecio.Location = new System.Drawing.Point(408, 159);
+            this.textoPrecio.Location = new System.Drawing.Point(381, 209);
             this.textoPrecio.Name = "textoPrecio";
-            this.textoPrecio.Size = new System.Drawing.Size(189, 27);
+            this.textoPrecio.Size = new System.Drawing.Size(276, 27);
             this.textoPrecio.TabIndex = 70;
-            this.textoPrecio.TextChanged += new System.EventHandler(this.textoPrecio_TextChanged);
             this.textoPrecio.Validated += new System.EventHandler(this.textoPrecio_Validated);
             // 
             // textoStock
             // 
             this.textoStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Italic);
-            this.textoStock.Location = new System.Drawing.Point(151, 206);
+            this.textoStock.Location = new System.Drawing.Point(141, 239);
             this.textoStock.Name = "textoStock";
             this.textoStock.Size = new System.Drawing.Size(129, 27);
             this.textoStock.TabIndex = 69;
-            this.textoStock.TextChanged += new System.EventHandler(this.textoStock_TextChanged);
             this.textoStock.Validated += new System.EventHandler(this.textoCosto_Validated);
             // 
             // textoNombre
             // 
             this.textoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Italic);
-            this.textoNombre.Location = new System.Drawing.Point(179, 97);
+            this.textoNombre.Location = new System.Drawing.Point(141, 175);
             this.textoNombre.Name = "textoNombre";
-            this.textoNombre.Size = new System.Drawing.Size(417, 27);
+            this.textoNombre.Size = new System.Drawing.Size(516, 27);
             this.textoNombre.TabIndex = 68;
-            this.textoNombre.TextChanged += new System.EventHandler(this.textoNombre_TextChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(39, 204);
+            this.label11.Location = new System.Drawing.Point(23, 238);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 29);
             this.label11.TabIndex = 67;
             this.label11.Text = "Stock *";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(289, 152);
+            this.label12.Location = new System.Drawing.Point(276, 205);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(99, 29);
             this.label12.TabIndex = 66;
             this.label12.Text = "Precio *";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(39, 154);
+            this.label10.Location = new System.Drawing.Point(21, 205);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(83, 29);
             this.label10.TabIndex = 65;
             this.label10.Text = "Talla *";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(39, 97);
+            this.label8.Location = new System.Drawing.Point(23, 175);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 29);
             this.label8.TabIndex = 64;
             this.label8.Text = "Nombre *";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(357, 269);
+            this.button2.Location = new System.Drawing.Point(505, 403);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(152, 34);
             this.button2.TabIndex = 78;
@@ -136,7 +129,7 @@
             this.button1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(141, 269);
+            this.button1.Location = new System.Drawing.Point(339, 403);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 34);
             this.button1.TabIndex = 77;
@@ -155,11 +148,10 @@
             "Mediano",
             "Grande",
             "Extra Grande"});
-            this.comboTalla.Location = new System.Drawing.Point(151, 154);
+            this.comboTalla.Location = new System.Drawing.Point(141, 205);
             this.comboTalla.Name = "comboTalla";
             this.comboTalla.Size = new System.Drawing.Size(129, 28);
             this.comboTalla.TabIndex = 79;
-            this.comboTalla.SelectedIndexChanged += new System.EventHandler(this.comboTalla_SelectedIndexChanged);
             // 
             // error
             // 
@@ -171,7 +163,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(104, 153);
+            this.label2.Location = new System.Drawing.Point(104, 231);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 36);
             this.label2.TabIndex = 80;
@@ -197,7 +189,7 @@
             this.Name = "Alta_Productos";
             this.Resizable = false;
             this.Text = "The Dark Uniforms - Alta";
-            this.Load += new System.EventHandler(this.Alta_Productos_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Alta_Productos_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

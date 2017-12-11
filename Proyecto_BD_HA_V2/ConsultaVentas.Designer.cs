@@ -28,65 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaVentas));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridViewBuscar = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnPDF = new System.Windows.Forms.Button();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBuscar)).BeginInit();
+            this.SearchMetroButton = new MetroFramework.Controls.MetroButton();
+            this.BillErrorMetroLabel = new MetroFramework.Controls.MetroLabel();
+            this.BillMetroGrid = new MetroFramework.Controls.MetroGrid();
+            this.IDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductCountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductPriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductDetailtColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalVentaMetroLabel = new MetroFramework.Controls.MetroTile();
+            ((System.ComponentModel.ISupportInitialize)(this.BillMetroGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // SearchTextBox
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
-            this.button2.Location = new System.Drawing.Point(328, 414);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 23);
-            this.button2.TabIndex = 110;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
-            this.button1.Location = new System.Drawing.Point(23, 414);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 23);
-            this.button1.TabIndex = 109;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dataGridViewBuscar
-            // 
-            this.dataGridViewBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBuscar.Location = new System.Drawing.Point(23, 113);
-            this.dataGridViewBuscar.Name = "dataGridViewBuscar";
-            this.dataGridViewBuscar.Size = new System.Drawing.Size(638, 295);
-            this.dataGridViewBuscar.TabIndex = 108;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(376, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 20);
-            this.textBox1.TabIndex = 106;
-            // 
-            // btnPDF
-            // 
-            this.btnPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
-            this.btnPDF.Location = new System.Drawing.Point(179, 414);
-            this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(143, 23);
-            this.btnPDF.TabIndex = 111;
-            this.btnPDF.Text = "Generar PDF";
-            this.btnPDF.UseVisualStyleBackColor = true;
-            this.btnPDF.Click += new System.EventHandler(this.btnXML_Click);
+            this.SearchTextBox.Location = new System.Drawing.Point(376, 66);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(178, 20);
+            this.SearchTextBox.TabIndex = 106;
             // 
             // metroLabel1
             // 
@@ -97,56 +62,157 @@
             this.metroLabel1.TabIndex = 112;
             this.metroLabel1.Text = "Ingresa el número de factura";
             // 
-            // metroButton1
+            // SearchMetroButton
             // 
-            this.metroButton1.Location = new System.Drawing.Point(560, 63);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(97, 23);
-            this.metroButton1.TabIndex = 113;
-            this.metroButton1.Text = "Buscar";
-            this.metroButton1.UseSelectable = true;
+            this.SearchMetroButton.Location = new System.Drawing.Point(560, 63);
+            this.SearchMetroButton.Name = "SearchMetroButton";
+            this.SearchMetroButton.Size = new System.Drawing.Size(97, 23);
+            this.SearchMetroButton.TabIndex = 113;
+            this.SearchMetroButton.Text = "Buscar";
+            this.SearchMetroButton.UseSelectable = true;
+            this.SearchMetroButton.Click += new System.EventHandler(this.SearchMetroButton_Click);
             // 
-            // metroButton2
+            // BillErrorMetroLabel
             // 
-            this.metroButton2.Location = new System.Drawing.Point(564, 414);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(97, 23);
-            this.metroButton2.TabIndex = 114;
-            this.metroButton2.Text = "Generar PDF";
-            this.metroButton2.UseSelectable = true;
+            this.BillErrorMetroLabel.AutoSize = true;
+            this.BillErrorMetroLabel.Location = new System.Drawing.Point(376, 91);
+            this.BillErrorMetroLabel.Name = "BillErrorMetroLabel";
+            this.BillErrorMetroLabel.Size = new System.Drawing.Size(101, 19);
+            this.BillErrorMetroLabel.Style = MetroFramework.MetroColorStyle.Red;
+            this.BillErrorMetroLabel.TabIndex = 115;
+            this.BillErrorMetroLabel.Text = "bill search error";
+            this.BillErrorMetroLabel.UseStyleColors = true;
+            this.BillErrorMetroLabel.Visible = false;
+            // 
+            // BillMetroGrid
+            // 
+            this.BillMetroGrid.AllowUserToAddRows = false;
+            this.BillMetroGrid.AllowUserToDeleteRows = false;
+            this.BillMetroGrid.AllowUserToOrderColumns = true;
+            this.BillMetroGrid.AllowUserToResizeRows = false;
+            this.BillMetroGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BillMetroGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BillMetroGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.BillMetroGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BillMetroGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.BillMetroGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BillMetroGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDColumn,
+            this.ProductColumn,
+            this.ProductCountColumn,
+            this.ProductPriceColumn,
+            this.ProductDetailtColumn});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.BillMetroGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.BillMetroGrid.EnableHeadersVisualStyles = false;
+            this.BillMetroGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.BillMetroGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BillMetroGrid.Location = new System.Drawing.Point(23, 113);
+            this.BillMetroGrid.Name = "BillMetroGrid";
+            this.BillMetroGrid.ReadOnly = true;
+            this.BillMetroGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BillMetroGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.BillMetroGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.BillMetroGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.BillMetroGrid.Size = new System.Drawing.Size(634, 271);
+            this.BillMetroGrid.TabIndex = 116;
+            // 
+            // IDColumn
+            // 
+            this.IDColumn.HeaderText = "ID";
+            this.IDColumn.Name = "IDColumn";
+            this.IDColumn.ReadOnly = true;
+            // 
+            // ProductColumn
+            // 
+            this.ProductColumn.HeaderText = "Producto";
+            this.ProductColumn.Name = "ProductColumn";
+            this.ProductColumn.ReadOnly = true;
+            // 
+            // ProductCountColumn
+            // 
+            this.ProductCountColumn.HeaderText = "Cantidad";
+            this.ProductCountColumn.Name = "ProductCountColumn";
+            this.ProductCountColumn.ReadOnly = true;
+            // 
+            // ProductPriceColumn
+            // 
+            this.ProductPriceColumn.HeaderText = "Precio";
+            this.ProductPriceColumn.Name = "ProductPriceColumn";
+            this.ProductPriceColumn.ReadOnly = true;
+            // 
+            // ProductDetailtColumn
+            // 
+            this.ProductDetailtColumn.HeaderText = "Detalles";
+            this.ProductDetailtColumn.Name = "ProductDetailtColumn";
+            this.ProductDetailtColumn.ReadOnly = true;
+            // 
+            // TotalVentaMetroLabel
+            // 
+            this.TotalVentaMetroLabel.ActiveControl = null;
+            this.TotalVentaMetroLabel.Location = new System.Drawing.Point(376, 390);
+            this.TotalVentaMetroLabel.Name = "TotalVentaMetroLabel";
+            this.TotalVentaMetroLabel.Size = new System.Drawing.Size(281, 47);
+            this.TotalVentaMetroLabel.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TotalVentaMetroLabel.TabIndex = 117;
+            this.TotalVentaMetroLabel.Text = "$ 0.00";
+            this.TotalVentaMetroLabel.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.TotalVentaMetroLabel.UseSelectable = true;
             // 
             // ConsultaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 460);
-            this.Controls.Add(this.metroButton2);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.TotalVentaMetroLabel);
+            this.Controls.Add(this.BillMetroGrid);
+            this.Controls.Add(this.BillErrorMetroLabel);
+            this.Controls.Add(this.SearchMetroButton);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.btnPDF);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridViewBuscar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SearchTextBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ConsultaVentas";
+            this.Resizable = false;
             this.Text = "Consulta de Ventas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsultaVentas_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillMetroGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridViewBuscar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnPDF;
+        private System.Windows.Forms.TextBox SearchTextBox;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton SearchMetroButton;
+        private MetroFramework.Controls.MetroLabel BillErrorMetroLabel;
+        private MetroFramework.Controls.MetroGrid BillMetroGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductCountColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductPriceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductDetailtColumn;
+        private MetroFramework.Controls.MetroTile TotalVentaMetroLabel;
     }
 }

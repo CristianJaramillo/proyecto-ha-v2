@@ -95,5 +95,10 @@ namespace Proyecto_BD_HA_V2
         {
             parent.Show();
         }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,27 +16,25 @@ namespace Proyecto_BD_HA_V2
 {
     public partial class Alta_Productos : MetroForm
     {
-        
-        public Alta_Productos()
+
+        private Form parent;
+        private string userId;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="userId"></param>
+        public Alta_Productos(Form parent, string userId)
         {
             InitializeComponent();
+            this.parent = parent;
+            this.userId = userId;
         }
-
-        private void Alta_Productos_Load(object sender, EventArgs e)
-        {
-            //MessageBox.Show(num);
-        }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        public string num;
-
-        public void Recibir(string usuario_id)
-        {
-            num = usuario_id;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,7 +50,7 @@ namespace Proyecto_BD_HA_V2
             {
                 if(numerico[0] == true && numerico[1] == true)
                 {
-                    pProducto.idResponsable = num;
+                    pProducto.idResponsable = userId;
                     pProducto.Nombre = textoNombre.Text.Trim();
                     pProducto.Talla = comboTalla.Text.Trim();
                     pProducto.Precio = textoPrecio.Text.Trim();
@@ -82,41 +80,6 @@ namespace Proyecto_BD_HA_V2
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textoCasif_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textoProducto_Validated(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textoPieza_Validated(object sender, EventArgs e)
-        {
-
-        }
-
         private void textoCosto_Validated(object sender, EventArgs e)
         {
             if (!Numerico.EsNumerico(textoStock.Text))
@@ -143,54 +106,14 @@ namespace Proyecto_BD_HA_V2
             }
         }
 
-        private void comboTalla_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Alta_Productos_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textoPrecio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textoStock_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textoNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
+            parent.Show();
         }
     }
 }

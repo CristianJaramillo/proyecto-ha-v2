@@ -69,7 +69,7 @@
             this.Label5.AutoSize = true;
             this.Label5.BackColor = System.Drawing.Color.Transparent;
             this.Label5.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.Label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Label5.Location = new System.Drawing.Point(64, 203);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(77, 18);
@@ -89,7 +89,7 @@
             this.Label4.AutoSize = true;
             this.Label4.BackColor = System.Drawing.Color.Transparent;
             this.Label4.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.Label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Label4.Location = new System.Drawing.Point(346, 123);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(98, 18);
@@ -104,7 +104,7 @@
             this.BtnEnviar.FlatAppearance.BorderSize = 0;
             this.BtnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEnviar.Location = new System.Drawing.Point(302, 369);
+            this.BtnEnviar.Location = new System.Drawing.Point(559, 380);
             this.BtnEnviar.Name = "BtnEnviar";
             this.BtnEnviar.Size = new System.Drawing.Size(98, 37);
             this.BtnEnviar.TabIndex = 20;
@@ -113,9 +113,10 @@
             // 
             // rtbMensaje
             // 
-            this.rtbMensaje.Location = new System.Drawing.Point(115, 240);
+            this.rtbMensaje.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rtbMensaje.Location = new System.Drawing.Point(67, 256);
             this.rtbMensaje.Name = "rtbMensaje";
-            this.rtbMensaje.Size = new System.Drawing.Size(464, 118);
+            this.rtbMensaje.Size = new System.Drawing.Size(513, 118);
             this.rtbMensaje.TabIndex = 19;
             this.rtbMensaje.Text = "ESTIMADO CLIENTE, UNIFORMES UPIICSIANOS ENVÍO SU FACTURA, GRACIAS POR SU PREFEREN" +
     "CIA.";
@@ -134,20 +135,21 @@
             this.Label3.AutoSize = true;
             this.Label3.BackColor = System.Drawing.Color.Transparent;
             this.Label3.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Label3.Location = new System.Drawing.Point(77, 173);
+            this.Label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Label3.Location = new System.Drawing.Point(64, 172);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(64, 18);
             this.Label3.TabIndex = 15;
             this.Label3.Text = "Asunto:";
+            this.Label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
             this.Label2.BackColor = System.Drawing.Color.Transparent;
             this.Label2.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Label2.Location = new System.Drawing.Point(93, 149);
+            this.Label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Label2.Location = new System.Drawing.Point(64, 150);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(48, 18);
             this.Label2.TabIndex = 14;
@@ -158,8 +160,8 @@
             this.Label1.AutoSize = true;
             this.Label1.BackColor = System.Drawing.Color.Transparent;
             this.Label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Label1.Location = new System.Drawing.Point(108, 123);
+            this.Label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Label1.Location = new System.Drawing.Point(79, 126);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(33, 18);
             this.Label1.TabIndex = 13;
@@ -192,7 +194,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label6.Location = new System.Drawing.Point(346, 150);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 18);
@@ -234,7 +236,9 @@
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Pantalla_Enviar";
+            this.Resizable = false;
             this.Text = "The Dark Uniforms - Enviar Correo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Pantalla_Enviar_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);

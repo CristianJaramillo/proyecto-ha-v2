@@ -370,6 +370,7 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.ClientIDErrorMetroLabel);
             this.Controls.Add(this.ClientIDMetroLabel);
+            this.MaximizeBox = false;
             this.Name = "SalesForm";
             this.Resizable = false;
             this.ShowIcon = false;

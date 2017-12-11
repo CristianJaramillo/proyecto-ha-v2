@@ -54,7 +54,7 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Neuropol", 14.25F, System.Drawing.FontStyle.Italic);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
             this.button3.Location = new System.Drawing.Point(267, 404);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(150, 50);
@@ -65,7 +65,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Neuropol", 14.25F, System.Drawing.FontStyle.Italic);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
             this.button2.Location = new System.Drawing.Point(522, 404);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 50);
@@ -76,7 +76,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Neuropol", 14.25F, System.Drawing.FontStyle.Italic);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
             this.button1.Location = new System.Drawing.Point(12, 404);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 50);
@@ -88,10 +88,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Neuropol", 14.25F, System.Drawing.FontStyle.Italic);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic);
             this.label4.Location = new System.Drawing.Point(76, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(507, 20);
+            this.label4.Size = new System.Drawing.Size(422, 24);
             this.label4.TabIndex = 80;
             this.label4.Text = "Ingrese el número de registro al que se cambiara";
             // 
@@ -145,7 +145,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(684, 462);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewcambio);
@@ -157,7 +156,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "CambioClienteActual";
+            this.Resizable = false;
             this.Text = "CambioClienteActual";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewcambio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();

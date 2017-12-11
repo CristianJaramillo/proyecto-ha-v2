@@ -49,7 +49,9 @@
             this.ClientSize = new System.Drawing.Size(680, 460);
             this.Controls.Add(this.dataGridReporte);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Reporte";
+            this.Resizable = false;
             this.Text = "The Dark Uniforms - Reporte";
             this.Load += new System.EventHandler(this.Reporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReporte)).EndInit();

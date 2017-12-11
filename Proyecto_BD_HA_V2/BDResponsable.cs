@@ -73,9 +73,5 @@ namespace Proyecto_BD_HA_V2
             parent.Show();
         }
 
-        private void UsersMetroGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

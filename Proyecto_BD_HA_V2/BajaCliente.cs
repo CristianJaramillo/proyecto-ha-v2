@@ -13,16 +13,15 @@ namespace Proyecto_BD_HA_V2
 {
     public partial class BajaCliente : MetroForm
     {
-        public BajaCliente()
+
+        private Form parent;
+
+        public BajaCliente(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -71,25 +70,16 @@ namespace Proyecto_BD_HA_V2
                 error.Clear();
             }
         }
+        
 
-        private void label4_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BajaCliente_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
-
-        private void BajaCliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+            parent.Show();
         }
     }
 }

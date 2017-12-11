@@ -29,25 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAlmacenista));
-            this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = global::Proyecto_BD_HA_V2.Properties.Resources.btn_cerrar;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(308, 357);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(44, 39);
-            this.button6.TabIndex = 108;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button1
             // 
@@ -57,7 +41,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(269, 169);
+            this.button1.Location = new System.Drawing.Point(268, 169);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 119);
             this.button1.TabIndex = 114;
@@ -70,7 +54,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(253, 291);
+            this.label4.Location = new System.Drawing.Point(254, 291);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(175, 14);
             this.label4.TabIndex = 211;
@@ -85,9 +69,10 @@
             this.ClientSize = new System.Drawing.Size(684, 462);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button6);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MenuAlmacenista";
+            this.Resizable = false;
             this.Text = "The Dark Uniforms - Alamacenista";
             this.Load += new System.EventHandler(this.MenuAlmacenista_Load);
             this.ResumeLayout(false);
@@ -96,7 +81,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
     }

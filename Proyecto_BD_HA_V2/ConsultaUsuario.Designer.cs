@@ -35,14 +35,14 @@
             this.SearchUserMetroTextBox = new MetroFramework.Controls.MetroTextBox();
             this.SearchUserMetroLabel = new MetroFramework.Controls.MetroLabel();
             this.SearchMetroButton = new MetroFramework.Controls.MetroButton();
-            this.UsersMetroGrid = new MetroFramework.Controls.MetroGrid();
-            this.IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UsernameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreateAtColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpdateAtColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreateAtColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsernameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsersMetroGrid = new MetroFramework.Controls.MetroGrid();
             ((System.ComponentModel.ISupportInitialize)(this.UsersMetroGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,6 +94,48 @@
             this.SearchMetroButton.Text = "Buscar";
             this.SearchMetroButton.UseSelectable = true;
             this.SearchMetroButton.Click += new System.EventHandler(this.SearchMetroButton_Click);
+            // 
+            // UpdateAtColumn
+            // 
+            this.UpdateAtColumn.HeaderText = "Fecha de Actualización";
+            this.UpdateAtColumn.Name = "UpdateAtColumn";
+            this.UpdateAtColumn.ReadOnly = true;
+            // 
+            // CreateAtColumn
+            // 
+            this.CreateAtColumn.HeaderText = "Fecha de Creación";
+            this.CreateAtColumn.Name = "CreateAtColumn";
+            this.CreateAtColumn.ReadOnly = true;
+            // 
+            // RoleColumn
+            // 
+            this.RoleColumn.HeaderText = "Cargo";
+            this.RoleColumn.Name = "RoleColumn";
+            this.RoleColumn.ReadOnly = true;
+            // 
+            // EmailColumn
+            // 
+            this.EmailColumn.HeaderText = "Correo Electrónico";
+            this.EmailColumn.Name = "EmailColumn";
+            this.EmailColumn.ReadOnly = true;
+            // 
+            // UsernameColumn
+            // 
+            this.UsernameColumn.HeaderText = "Username";
+            this.UsernameColumn.Name = "UsernameColumn";
+            this.UsernameColumn.ReadOnly = true;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.HeaderText = "Name";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            // 
+            // IdColumn
+            // 
+            this.IdColumn.HeaderText = "ID";
+            this.IdColumn.Name = "IdColumn";
+            this.IdColumn.ReadOnly = true;
             // 
             // UsersMetroGrid
             // 
@@ -150,48 +192,6 @@
             this.UsersMetroGrid.Size = new System.Drawing.Size(644, 353);
             this.UsersMetroGrid.TabIndex = 94;
             // 
-            // IdColumn
-            // 
-            this.IdColumn.HeaderText = "ID";
-            this.IdColumn.Name = "IdColumn";
-            this.IdColumn.ReadOnly = true;
-            // 
-            // NameColumn
-            // 
-            this.NameColumn.HeaderText = "Name";
-            this.NameColumn.Name = "NameColumn";
-            this.NameColumn.ReadOnly = true;
-            // 
-            // UsernameColumn
-            // 
-            this.UsernameColumn.HeaderText = "Username";
-            this.UsernameColumn.Name = "UsernameColumn";
-            this.UsernameColumn.ReadOnly = true;
-            // 
-            // EmailColumn
-            // 
-            this.EmailColumn.HeaderText = "Correo Electrónico";
-            this.EmailColumn.Name = "EmailColumn";
-            this.EmailColumn.ReadOnly = true;
-            // 
-            // RoleColumn
-            // 
-            this.RoleColumn.HeaderText = "Cargo";
-            this.RoleColumn.Name = "RoleColumn";
-            this.RoleColumn.ReadOnly = true;
-            // 
-            // CreateAtColumn
-            // 
-            this.CreateAtColumn.HeaderText = "Fecha de Creación";
-            this.CreateAtColumn.Name = "CreateAtColumn";
-            this.CreateAtColumn.ReadOnly = true;
-            // 
-            // UpdateAtColumn
-            // 
-            this.UpdateAtColumn.HeaderText = "Fecha de Actualización";
-            this.UpdateAtColumn.Name = "UpdateAtColumn";
-            this.UpdateAtColumn.ReadOnly = true;
-            // 
             // ConsultaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,7 +202,9 @@
             this.Controls.Add(this.SearchUserMetroLabel);
             this.Controls.Add(this.SearchUserMetroTextBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ConsultaUsuario";
+            this.Resizable = false;
             this.Text = "The Dark Uniforms - Busqueda de Usuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsultaUsuario_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.UsersMetroGrid)).EndInit();
@@ -215,13 +217,13 @@
         private MetroFramework.Controls.MetroTextBox SearchUserMetroTextBox;
         private MetroFramework.Controls.MetroLabel SearchUserMetroLabel;
         private MetroFramework.Controls.MetroButton SearchMetroButton;
-        private MetroFramework.Controls.MetroGrid UsersMetroGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UsernameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmailColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoleColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreateAtColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn UpdateAtColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CreateAtColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoleColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmailColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UsernameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdColumn;
+        private MetroFramework.Controls.MetroGrid UsersMetroGrid;
     }
 }

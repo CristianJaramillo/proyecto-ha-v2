@@ -13,19 +13,22 @@ using MySql.Data; // Nuevo
 using MySql.Data.MySqlClient;
 using System.IO; // Para directory y FileStream
 using MetroFramework.Forms;
+using Proyecto_BD_HA_V2.Store;
 
 namespace Proyecto_BD_HA_V2
 {
     public partial class BDCliente : MetroForm
     {
-        private DataTable dtDatos = new DataTable();
+
+        private Form parent;
 
         /// <summary>
         /// 
         /// </summary>
-        public BDCliente()
+        public BDCliente(Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
         }
         
         /// <summary>
@@ -35,12 +38,36 @@ namespace Proyecto_BD_HA_V2
         /// <param name="e"></param>
         private void BDCliente_Load(object sender, EventArgs e)
         {
-            MySqlConnection _conexion = BDConexion.ObtenerConexion();
-            //            DataTable dtDatos = new DataTable();
-            MySqlDataAdapter mdaDatos = new MySqlDataAdapter(string.Format("SELECT `idCliente`, `Nombre`, `Apellidos`, `Direccion`, `Telefono`, `email` FROM `cliente`"), _conexion);
-            mdaDatos.Fill(dtDatos);
-            dataGridReporte.DataSource = dtDatos;
-            _conexion.Close();
+            var cmd = Connection.GetCommand("SELECT * FROM cliente");
+            var reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    ClientsMetroGrid.Rows.Add(
+                            reader.GetInt32(0),
+                            reader.GetString(1),
+                            reader.GetString(2),
+                            reader.GetString(3),
+                            reader.GetString(4),
+                            reader.GetString(5)
+                    );
+                }
+            }
+
+            reader.Close();
+            Connection.Close();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BDCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            parent.Show();
         }
     }
 }

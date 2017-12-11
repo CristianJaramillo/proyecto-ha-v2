@@ -11,7 +11,6 @@ namespace Proyecto_BD_HA_V2
 
 #region
         private Form parent;
-        private Form children;
         private string userId;
 #endregion
 
@@ -62,18 +61,6 @@ namespace Proyecto_BD_HA_V2
             comboBoxCliente.DataSource = ds.Tables[0].DefaultView;
             comboBoxCliente.ValueMember = "idCliente";
             _conexion.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            BDCliente bd = new BDCliente();
-            bd.Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            VerBDProductos ver = new VerBDProductos();
-            ver.Show();
         }
 
         /// <summary>

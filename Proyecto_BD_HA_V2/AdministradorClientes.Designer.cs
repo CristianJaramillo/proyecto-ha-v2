@@ -33,6 +33,7 @@
             this.DeleteClientMetroTile = new MetroFramework.Controls.MetroTile();
             this.UpdateClientMetroTile = new MetroFramework.Controls.MetroTile();
             this.SearchClientMetroTile = new MetroFramework.Controls.MetroTile();
+            this.ShowUsersMetroTile = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // NewClientMetroTile
@@ -40,8 +41,8 @@
             this.NewClientMetroTile.ActiveControl = null;
             this.NewClientMetroTile.Location = new System.Drawing.Point(23, 101);
             this.NewClientMetroTile.Name = "NewClientMetroTile";
-            this.NewClientMetroTile.Size = new System.Drawing.Size(315, 142);
-            this.NewClientMetroTile.Style = MetroFramework.MetroColorStyle.Silver;
+            this.NewClientMetroTile.Size = new System.Drawing.Size(371, 142);
+            this.NewClientMetroTile.Style = MetroFramework.MetroColorStyle.Blue;
             this.NewClientMetroTile.TabIndex = 111;
             this.NewClientMetroTile.Text = "Nuevo Cliente";
             this.NewClientMetroTile.UseSelectable = true;
@@ -50,10 +51,10 @@
             // DeleteClientMetroTile
             // 
             this.DeleteClientMetroTile.ActiveControl = null;
-            this.DeleteClientMetroTile.Location = new System.Drawing.Point(342, 101);
+            this.DeleteClientMetroTile.Location = new System.Drawing.Point(400, 101);
             this.DeleteClientMetroTile.Name = "DeleteClientMetroTile";
-            this.DeleteClientMetroTile.Size = new System.Drawing.Size(315, 142);
-            this.DeleteClientMetroTile.Style = MetroFramework.MetroColorStyle.Silver;
+            this.DeleteClientMetroTile.Size = new System.Drawing.Size(257, 142);
+            this.DeleteClientMetroTile.Style = MetroFramework.MetroColorStyle.Red;
             this.DeleteClientMetroTile.TabIndex = 112;
             this.DeleteClientMetroTile.Text = "Eliminar Cliente";
             this.DeleteClientMetroTile.UseSelectable = true;
@@ -62,10 +63,10 @@
             // UpdateClientMetroTile
             // 
             this.UpdateClientMetroTile.ActiveControl = null;
-            this.UpdateClientMetroTile.Location = new System.Drawing.Point(342, 249);
+            this.UpdateClientMetroTile.Location = new System.Drawing.Point(496, 249);
             this.UpdateClientMetroTile.Name = "UpdateClientMetroTile";
-            this.UpdateClientMetroTile.Size = new System.Drawing.Size(315, 142);
-            this.UpdateClientMetroTile.Style = MetroFramework.MetroColorStyle.Silver;
+            this.UpdateClientMetroTile.Size = new System.Drawing.Size(161, 142);
+            this.UpdateClientMetroTile.Style = MetroFramework.MetroColorStyle.Orange;
             this.UpdateClientMetroTile.TabIndex = 114;
             this.UpdateClientMetroTile.Text = "Actualizar Cliente";
             this.UpdateClientMetroTile.UseSelectable = true;
@@ -74,20 +75,33 @@
             // SearchClientMetroTile
             // 
             this.SearchClientMetroTile.ActiveControl = null;
-            this.SearchClientMetroTile.Location = new System.Drawing.Point(23, 249);
+            this.SearchClientMetroTile.Location = new System.Drawing.Point(268, 249);
             this.SearchClientMetroTile.Name = "SearchClientMetroTile";
-            this.SearchClientMetroTile.Size = new System.Drawing.Size(315, 142);
-            this.SearchClientMetroTile.Style = MetroFramework.MetroColorStyle.Silver;
+            this.SearchClientMetroTile.Size = new System.Drawing.Size(222, 142);
+            this.SearchClientMetroTile.Style = MetroFramework.MetroColorStyle.Green;
             this.SearchClientMetroTile.TabIndex = 113;
             this.SearchClientMetroTile.Text = "Buscar Cliente";
             this.SearchClientMetroTile.UseSelectable = true;
             this.SearchClientMetroTile.Click += new System.EventHandler(this.SearchClientMetroTile_Click);
+            // 
+            // ShowUsersMetroTile
+            // 
+            this.ShowUsersMetroTile.ActiveControl = null;
+            this.ShowUsersMetroTile.Location = new System.Drawing.Point(23, 249);
+            this.ShowUsersMetroTile.Name = "ShowUsersMetroTile";
+            this.ShowUsersMetroTile.Size = new System.Drawing.Size(239, 142);
+            this.ShowUsersMetroTile.Style = MetroFramework.MetroColorStyle.Teal;
+            this.ShowUsersMetroTile.TabIndex = 115;
+            this.ShowUsersMetroTile.Text = "Visualizar Registros";
+            this.ShowUsersMetroTile.UseSelectable = true;
+            this.ShowUsersMetroTile.Click += new System.EventHandler(this.ShowUsersMetroTile_Click);
             // 
             // AdministradorClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 460);
+            this.Controls.Add(this.ShowUsersMetroTile);
             this.Controls.Add(this.UpdateClientMetroTile);
             this.Controls.Add(this.SearchClientMetroTile);
             this.Controls.Add(this.DeleteClientMetroTile);
@@ -107,5 +121,6 @@
         private MetroFramework.Controls.MetroTile DeleteClientMetroTile;
         private MetroFramework.Controls.MetroTile UpdateClientMetroTile;
         private MetroFramework.Controls.MetroTile SearchClientMetroTile;
+        private MetroFramework.Controls.MetroTile ShowUsersMetroTile;
     }
 }

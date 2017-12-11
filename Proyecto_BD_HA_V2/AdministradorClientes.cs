@@ -36,7 +36,7 @@ namespace Proyecto_BD_HA_V2
         /// <param name="e"></param>
         private void NewClientMetroTile_Click(object sender, EventArgs e)
         {
-            children = new AltaClientes();
+            children = new AltaClientes(this);
             children.Show();
             Hide();
         }
@@ -48,7 +48,7 @@ namespace Proyecto_BD_HA_V2
         /// <param name="e"></param>
         private void DeleteClientMetroTile_Click(object sender, EventArgs e)
         {
-            children = new BajaCliente();
+            children = new BajaCliente(this);
             children.Show();
             Hide();
         }
@@ -60,7 +60,7 @@ namespace Proyecto_BD_HA_V2
         /// <param name="e"></param>
         private void SearchClientMetroTile_Click(object sender, EventArgs e)
         {
-            children = new ConsultaCliente();
+            children = new ConsultaCliente(this);
             children.Show();
             Hide();
 
@@ -73,7 +73,7 @@ namespace Proyecto_BD_HA_V2
         /// <param name="e"></param>
         private void UpdateClientMetroTile_Click(object sender, EventArgs e)
         {
-            children = new CambioCliente();
+            children = new CambioCliente(this);
             children.Show();
             Hide();
         }
@@ -86,6 +86,18 @@ namespace Proyecto_BD_HA_V2
         private void AdministradorClientes_FormClosing(object sender, FormClosingEventArgs e)
         {
             parent.Show();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ShowUsersMetroTile_Click(object sender, EventArgs e)
+        {
+            children = new BDCliente(this);
+            children.Show();
+            Hide();
         }
     }
 }
